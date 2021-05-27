@@ -1,0 +1,3 @@
+# https://github.com/marketplace/actions/cancel-workflow-action#advanced-pull-requests-from-forks
+name: Cancel stale workflows
+on:
