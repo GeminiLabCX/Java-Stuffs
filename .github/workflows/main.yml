@@ -1,0 +1,84 @@
+
+name: main
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+env:
+  RUSTFLAGS: -Ctarget-feature=+avx
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - run: lscpu
+        if: matrix.os == 'ubuntu-latest'
+      - uses: actions/checkout@v3
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+          target: wasm32-unknown-unknown
+          components: rustfmt, clippy
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: nightly
+          override: false
+          target: wasm32-unknown-unknown
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo fmt -- --check
+      - run: cargo clippy --workspace --all-features -- --deny warnings
+      - run: cargo clippy --all-features --target wasm32-unknown-unknown -- --deny warnings
+      - run: cargo build --workspace --release --all-features
+      - run: cargo test --workspace --release --all-features
+      - run: cargo +nightly build --workspace --release --all-features
+      - run: cargo +nightly test --workspace --release --all-features
+      - run: cargo +nightly bench --workspace --all-features
+      - name: wasm build and tests
+        if: matrix.os != 'windows-latest'
+        env:
+          RUSTFLAGS: -Ctarget-feature=-simd128
+        run: |
+          curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+          wasm-pack build -t web -s hanabi1224 --out-name annoy
+          wasm-pack test --node --release
+      - uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 17
+      - name: java Test
+        run: |
+          pushd java
+          ./gradlew clean test
+          ./gradlew clean build publishToMavenLocal
+          ./gradlew copy-artifacts
+          ./gradlew clean test
+          ./gradlew clean build publishToMavenLocal
+      - uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: "7.x"
+      - name: dotnet Test
+        run: |
+          dotnet test -c Release dotnet/RuAnnoy.Tests
+      - name: dotnet Build - Linux
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          dotnet build -c Release dotnet/RuAnnoy-Batteries-Linux-x64
+          dotnet pack -c Release dotnet/RuAnnoy-Batteries-Linux-x64 -o dotnet/artifacts
+      - name: dotnet Build - OSX
+        if: matrix.os == 'macos-latest'
+        run: |
+          dotnet build -c Release dotnet/RuAnnoy-Batteries-Darwin-x64
+          dotnet pack -c Release dotnet/RuAnnoy-Batteries-Darwin-x64 -o dotnet/artifacts
+      - name: dotnet Build - Windows
+        if: matrix.os == 'windows-latest'
+        run: |
+          dotnet build -c Release dotnet/RuAnnoy-Batteries-Windows-x64
+          dotnet build -c Release dotnet/RuAnnoy
