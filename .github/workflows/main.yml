@@ -82,3 +82,100 @@ jobs:
         run: |
           dotnet build -c Release dotnet/RuAnnoy-Batteries-Windows-x64
           dotnet build -c Release dotnet/RuAnnoy
+          dotnet pack -c Release dotnet/RuAnnoy -o dotnet/artifacts
+          dotnet pack -c Release dotnet/RuAnnoy-Batteries-Windows-x64 -o dotnet/artifacts
+      - name: Benchmarks - Linux
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          sudo sh -c 'wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -'
+          sudo sh -c 'wget -qO- https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list > /etc/apt/sources.list.d/dart_stable.list'
+          sudo apt-get update -y
+          sudo apt-get install dart -y
+          sudo ln -sf /usr/lib/dart/bin/dart /usr/bin/dart
+          pushd bench
+          ./bench.sh
+      - uses: actions/upload-artifact@v3
+        if: matrix.os == 'ubuntu-latest'
+        with:
+          name: npm
+          path: pkg/**/*
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v3
+        with:
+          path: dotnet/artifacts/*.nupkg
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v3
+        with:
+          path: dotnet/artifacts/*.snupkg
+      - uses: actions/upload-artifact@v3
+        if: matrix.os == 'windows-latest'
+        with:
+          path: target/release/*.dll
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v3
+        if: matrix.os == 'ubuntu-latest'
+        with:
+          path: target/release/*.so
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v3
+        if: matrix.os == 'macos-latest'
+        with:
+          path: target/release/*.dylib
+          if-no-files-found: error
+      - uses: EmbarkStudios/cargo-deny-action@v1
+        if: matrix.os == 'ubuntu-latest'
+      # - name: Cargo deny
+      #   run: |
+      #     cargo install cargo-deny
+      #     cargo deny check
+      - name: Deploy nugets
+        if: github.ref == 'refs/heads/master'
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+        shell: pwsh
+        run: |
+          pushd dotnet/artifacts
+          dotnet nuget push *.nupkg --skip-duplicate -s https://api.nuget.org/v3/index.json -k $env:NUGET_API_KEY ; exit 0
+  web:
+    runs-on: ubuntu-latest
+    env:
+      RUSTFLAGS: -Ctarget-feature=-simd128
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          target: wasm32-unknown-unknown
+          override: true
+      - run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+      - run: lerna bootstrap
+      - run: lerna run build
+      - run: lerna run lint
+      - uses: actions/upload-artifact@v3
+        with:
+          name: example-web
+          path: example/web/dist/**/*
+          if-no-files-found: error
+  codedov:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
+          components: llvm-tools-preview
+      - uses: taiki-e/install-action@cargo-llvm-cov
+      - run: cargo llvm-cov --all-features --lcov --output-path lcov.info
+      - uses: actions/upload-artifact@v3
+        with:
+          name: lcov.info
+          path: lcov.info
+          if-no-files-found: error
+      - name: Upload to codecov
+        run: |
+          curl -Os https://uploader.codecov.io/latest/linux/codecov
+          chmod +x codecov
+          ./codecov -f lcov.info -Z

@@ -1,0 +1,42 @@
+
+[package]
+description = """
+A rust implementation of annoy(https://github.com/spotify/annoy) (Index serving only). C ABI is also provided.
+"""
+edition = "2021"
+exclude = ["dotnet", "java", "ffi", "bench", "test_gen", ".idea", ".vscode", ".github", "*.yml", "*.iml", ".gitignore"]
+license = "MIT"
+name = "annoy-rs"
+repository = "https://github.com/hanabi1224/RuAnnoy"
+version = "0.1.1"
+
+[workspace]
+members = ["java", "ffi"]
+
+[features]
+default = []
+
+[dependencies]
+cfg-if = "1"
+ordered-float = "3"
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+getrandom = {version = "0.2", features = ["js"]}
+js-sys = "0.3"
+serde = {version = "1", features = ["derive"]}
+serde-wasm-bindgen = "0.4"
+wasm-bindgen = "0.2"
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+memmap2 = "0.5"
+
+[dev-dependencies]
+lazy_static = "1"
+rand = "0.8"
+wasm-bindgen-test = "0.3"
+
+[build-dependencies]
+rustc_version = "0.4"
+
+[lib]
+crate-type = ["rlib", "cdylib"]
