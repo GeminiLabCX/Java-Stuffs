@@ -116,3 +116,46 @@ val index = AnnoyIndex.tryLoad("index.5d.ann", 5, IndexType.Angular)
   <ItemGroup>
     <PackageReference Include="RuAnnoy" Version="*" />
     <PackageReference Include="RuAnnoy-Batteries-Windows-x64" Version="*" />
+  </ItemGroup>
+```
+
+#### Usage
+
+```csharp
+var index = AnnoyIndex.Load("index.5d.ann", 5, IndexType.Angular);
+```
+
+### dart
+
+#### Install via [pub.dev](https://pub.dev/packages/dart_native_annoy)
+
+```yaml
+# pubspec.yaml
+dependencies:
+  dart_native_annoy: ^0.1.0
+```
+
+#### Usage
+
+```dart
+import 'dart:ffi';
+import 'package:dart_native_annoy/annoy.dart';
+
+/// Creat factory from DynamicLibrary
+final indexFactory = AnnoyIndexFactory(lib: DynamicLibrary.open('libannoy_rs_ffi.so'));
+
+/// Load index
+final index = indexFactory.loadIndex(
+      'index.euclidean.5d.ann', 5, IndexType.Euclidean)!;
+
+print('size: ${index.size}');
+
+final v3 = index.getItemVector(3);
+
+final nearest = index.getNearest(v0, 5, includeDistance: true);
+```
+
+## TODO
+
+- Index building support
+- CLI tool to build index from file
