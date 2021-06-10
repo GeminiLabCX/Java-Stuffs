@@ -18,4 +18,9 @@
 
 ```verilog
 [Python]annoy
-angular Total time elapsed: 
+angular Total time elapsed: 0.356s
+angular Avg time elapsed: 0.356ms
+
+[Python]annoy
+euclidean Total time elapsed: 0.365s
+euclidean Avg time elapsed: 0.365ms
