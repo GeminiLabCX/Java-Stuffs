@@ -31,4 +31,10 @@ euclidean Avg time elapsed: 0.365ms
 
 [Rust] annoy-rs
 [euclidean] Total time elapsed: 0.7305872s
-[
+[euclidean] Avg time elapsed: 0.7305872ms
+
+[Dart]dart_native_annoy
+angular Total time elapsed: 1.092s
+angular Avg time elapsed: 1.092ms
+
+[Dart]dart_na
