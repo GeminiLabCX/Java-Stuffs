@@ -37,4 +37,9 @@ euclidean Avg time elapsed: 0.365ms
 angular Total time elapsed: 1.092s
 angular Avg time elapsed: 1.092ms
 
-[Dart]dart_na
+[Dart]dart_native_annoy
+euclidean Total time elapsed: 1.092s
+euclidean Avg time elapsed: 1.092ms
+
+[Java]com.github.hanabi1224:RuAnnoy
+[angular] Total time elapsed:
