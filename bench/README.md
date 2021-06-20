@@ -54,4 +54,9 @@ euclidean Avg time elapsed: 1.092ms
 [euclidean] Avg time elapsed: 0.803ms
 
 [Java]com.spotify:annoy
-[euclidean] To
+[euclidean] Total time elapsed: 4.878s
+[euclidean] Avg time elapsed: 4.878ms
+
+[Dotnet] RuAnnoy
+[angular] Total time elapsed: 1.0711277s
+[angular] Avg time elapsed: 
