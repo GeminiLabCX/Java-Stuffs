@@ -49,4 +49,9 @@ euclidean Avg time elapsed: 1.092ms
 [angular] Total time elapsed: 4.803s
 [angular] Avg time elapsed: 4.803ms
 
-[Java]com.g
+[Java]com.github.hanabi1224:RuAnnoy
+[euclidean] Total time elapsed: 0.803s
+[euclidean] Avg time elapsed: 0.803ms
+
+[Java]com.spotify:annoy
+[euclidean] To
