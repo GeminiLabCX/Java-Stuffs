@@ -59,4 +59,9 @@ euclidean Avg time elapsed: 1.092ms
 
 [Dotnet] RuAnnoy
 [angular] Total time elapsed: 1.0711277s
-[angular] Avg time elapsed: 
+[angular] Avg time elapsed: 1.071ms
+
+[Dotnet] RuAnnoy
+[euclidean] Total time elapsed: 1.2642738s
+[euclidean] Avg time elapsed: 1.264ms
+```
