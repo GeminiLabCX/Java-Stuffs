@@ -14,4 +14,5 @@ for metric in metrics:
         v = [random.gauss(0, 1) for z in range(dim)]
         t.add_item(i, v)
 
-    t.build(20)  # 10 
+    t.build(20)  # 10 trees
+    t.save(fname)

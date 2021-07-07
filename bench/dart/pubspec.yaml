@@ -1,0 +1,5 @@
+name: bencher
+version: 0.1.0
+publish_to: none
+environment:
+  sdk: ">=2.12.0
