@@ -3,4 +3,9 @@
  */
 package ru.annoy.test
 
-impo
+import com.github.hanabi1224.RuAnnoy.*
+import com.spotify.annoy.ANNIndex
+
+fun main(args: Array<String>) {
+    val dim = args[0].toInt()
+    val size = ar
