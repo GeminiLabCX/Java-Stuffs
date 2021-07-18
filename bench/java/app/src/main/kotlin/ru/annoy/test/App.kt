@@ -15,4 +15,8 @@ fun main(args: Array<String>) {
     for (metric in arrayOf("angular", "euclidean")) {
         val path = "../../index.$metric.${dim}d.ann"
         // println("Testing index $path")
-        val index1 = AnnoyIndex.tryLoad(path, dim, Inde
+        val index1 = AnnoyIndex.tryLoad(path, dim, IndexType.valueOf(metric.capitalize()))
+        if (index1 != null) {
+            testSpeed1(index1, metric, nLoop, nResult, size)
+        }
+       
