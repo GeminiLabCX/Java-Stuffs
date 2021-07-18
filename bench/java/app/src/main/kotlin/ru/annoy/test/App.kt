@@ -13,4 +13,6 @@ fun main(args: Array<String>) {
     var nLoop = args[3].toLong()
 
     for (metric in arrayOf("angular", "euclidean")) {
- 
+        val path = "../../index.$metric.${dim}d.ann"
+        // println("Testing index $path")
+        val index1 = AnnoyIndex.tryLoad(path, dim, Inde
