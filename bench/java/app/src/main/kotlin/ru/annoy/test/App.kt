@@ -8,4 +8,9 @@ import com.spotify.annoy.ANNIndex
 
 fun main(args: Array<String>) {
     val dim = args[0].toInt()
-    val size = ar
+    val size = args[1].toInt()
+    var nResult = args[2].toInt()
+    var nLoop = args[3].toLong()
+
+    for (metric in arrayOf("angular", "euclidean")) {
+ 
