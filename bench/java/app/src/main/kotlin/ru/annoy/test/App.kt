@@ -21,4 +21,9 @@ fun main(args: Array<String>) {
         }
         println()
         val index2 = ANNIndex(dim, path, com.spotify.annoy.IndexType.valueOf(metric.uppercase()))
-        testSpeed2(index
+        testSpeed2(index2, metric, nLoop.toInt(), nResult, size)
+        println()
+    }
+}
+
+fun testSpeed1(index: IAnnoyIndex, metric: String, nLoop: Long, nResult: Int, 
