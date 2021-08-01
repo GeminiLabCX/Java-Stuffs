@@ -35,4 +35,6 @@ fun testSpeed1(index: IAnnoyIndex, metric: String, nLoop: Long, nResult: Int, si
     }
     val tEnd = System.currentTimeMillis()
     val diff = (tEnd - tStart).toDouble()
-    println("[Java]com.git
+    println("[Java]com.github.hanabi1224:RuAnnoy")
+    println("[$metric] Total time elapsed: ${diff/1000}s")
+    println("[$metric] Avg time elapsed: ${diff/nLoop
