@@ -37,4 +37,8 @@ fun testSpeed1(index: IAnnoyIndex, metric: String, nLoop: Long, nResult: Int, si
     val diff = (tEnd - tStart).toDouble()
     println("[Java]com.github.hanabi1224:RuAnnoy")
     println("[$metric] Total time elapsed: ${diff/1000}s")
-    println("[$metric] Avg time elapsed: ${diff/nLoop
+    println("[$metric] Avg time elapsed: ${diff/nLoop}ms")
+    // println("============================================")
+}
+
+fun testSpeed2(index: ANNIndex, metric: String, nLoop: Int, nResult: Int,
