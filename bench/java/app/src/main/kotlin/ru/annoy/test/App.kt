@@ -41,4 +41,8 @@ fun testSpeed1(index: IAnnoyIndex, metric: String, nLoop: Long, nResult: Int, si
     // println("============================================")
 }
 
-fun testSpeed2(index: ANNIndex, metric: String, nLoop: Int, nResult: Int,
+fun testSpeed2(index: ANNIndex, metric: String, nLoop: Int, nResult: Int, size: Int) {
+    val tStart = System.currentTimeMillis()
+    for (i in 0..nLoop) {
+        val id = i % size
+        val v = index.getItemVector(id)
