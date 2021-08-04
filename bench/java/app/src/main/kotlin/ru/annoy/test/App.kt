@@ -46,3 +46,8 @@ fun testSpeed2(index: ANNIndex, metric: String, nLoop: Int, nResult: Int, size: 
     for (i in 0..nLoop) {
         val id = i % size
         val v = index.getItemVector(id)
+        index.getNearest(v, nResult)
+    }
+    val tEnd = System.currentTimeMillis()
+    val diff = (tEnd - tStart).toDouble()
+    println("[Jav
