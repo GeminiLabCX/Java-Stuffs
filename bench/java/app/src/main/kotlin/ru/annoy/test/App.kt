@@ -50,4 +50,7 @@ fun testSpeed2(index: ANNIndex, metric: String, nLoop: Int, nResult: Int, size: 
     }
     val tEnd = System.currentTimeMillis()
     val diff = (tEnd - tStart).toDouble()
-    println("[Jav
+    println("[Java]com.spotify:annoy")
+    println("[$metric] Total time elapsed: ${diff/1000}s")
+    println("[$metric] Avg time elapsed: ${diff/nLoop}ms")
+    // println("=====
