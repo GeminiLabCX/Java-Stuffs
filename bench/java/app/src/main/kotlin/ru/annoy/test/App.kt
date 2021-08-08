@@ -53,4 +53,5 @@ fun testSpeed2(index: ANNIndex, metric: String, nLoop: Int, nResult: Int, size: 
     println("[Java]com.spotify:annoy")
     println("[$metric] Total time elapsed: ${diff/1000}s")
     println("[$metric] Avg time elapsed: ${diff/nLoop}ms")
-    // println("=====
+    // println("============================================")
+}
