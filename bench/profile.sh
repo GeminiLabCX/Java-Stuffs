@@ -11,4 +11,5 @@ gprof2dot -f callgrind callgrind.nosimd.out | dot -Tsvg -o perf.py3.svg
 pushd rust
 
 cargo build --release
-./targe
+./target/release/bencher 256 10000 200 1000
+valgrind --tool=callgrind --callgrind-out-file=callgrind.nosimd.out -- ./target/release/bencher 256 10000 200 
