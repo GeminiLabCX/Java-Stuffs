@@ -5,4 +5,10 @@
 # python3 builder.py 256 10000
 
 python3 bencher.py 256 10000 200 1000
-valgrind --tool=callgrind --callgrind-out-file=callgrind.nosimd.out -- pytho
+valgrind --tool=callgrind --callgrind-out-file=callgrind.nosimd.out -- python3 bencher.py 256 10000 200 10
+gprof2dot -f callgrind callgrind.nosimd.out | dot -Tsvg -o perf.py3.svg
+
+pushd rust
+
+cargo build --release
+./targe
