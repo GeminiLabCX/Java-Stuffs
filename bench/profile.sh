@@ -12,4 +12,8 @@ pushd rust
 
 cargo build --release
 ./target/release/bencher 256 10000 200 1000
-valgrind --tool=callgrind --callgrind-out-file=callgrind.nosimd.out -- ./target/release/bencher 256 10000 200 
+valgrind --tool=callgrind --callgrind-out-file=callgrind.nosimd.out -- ./target/release/bencher 256 10000 200 10
+gprof2dot -f callgrind callgrind.nosimd.out | dot -Tsvg -o ../perf.nosimd.svg
+
+cargo +nightly build --release --all-features
+./target/release/ben
