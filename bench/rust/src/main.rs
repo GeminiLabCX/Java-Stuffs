@@ -8,4 +8,9 @@ fn main() {
     let dim = args[1].parse().unwrap();
     let size = args[2].parse::<u64>().unwrap();
     let n_result = args[3].parse().unwrap();
-   
+    let n_loop = args[4].parse().unwrap();
+
+    let metrics = vec![
+        IndexType::Angular,
+        IndexType::Euclidean,
+        IndexType::Manhatt
