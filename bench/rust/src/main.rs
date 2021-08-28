@@ -13,4 +13,9 @@ fn main() {
     let metrics = vec![
         IndexType::Angular,
         IndexType::Euclidean,
-        IndexType::Manhatt
+        IndexType::Manhattan,
+        IndexType::Dot,
+    ];
+    for metric in metrics.iter() {
+        let path = format!("../index.{}.{}d.ann", metric, dim);
+        let index 
