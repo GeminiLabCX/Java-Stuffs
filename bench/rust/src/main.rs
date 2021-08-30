@@ -21,4 +21,7 @@ fn main() {
         let index = AnnoyIndex::load(dim, path.as_str(), metric.clone()).unwrap();
         let t_start = time::Instant::now();
         for i in 0..n_loop {
-            
+            let id = i % size;
+            let v = index.get_item_vector(id);
+            index.get_nearest(v.as_slice(), n_result, -1, true);
+      
