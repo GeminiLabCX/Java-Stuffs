@@ -24,4 +24,8 @@ fn main() {
             let id = i % size;
             let v = index.get_item_vector(id);
             index.get_nearest(v.as_slice(), n_result, -1, true);
-      
+        }
+        let t_end = time::Instant::now();
+        let diff = t_end - t_start;
+        println!("[Rust] annoy-rs");
+        println!("[{}] Total time elapsed: 
