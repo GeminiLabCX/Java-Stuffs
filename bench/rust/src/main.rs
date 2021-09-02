@@ -28,4 +28,8 @@ fn main() {
         let t_end = time::Instant::now();
         let diff = t_end - t_start;
         println!("[Rust] annoy-rs");
-        println!("[{}] Total time elapsed: 
+        println!("[{}] Total time elapsed: {}s", metric, diff.as_secs_f32());
+        println!(
+            "[{}] Avg time elapsed: {}ms",
+            metric,
+            diff.as_secs_f32(
