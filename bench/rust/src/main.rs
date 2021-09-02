@@ -32,4 +32,8 @@ fn main() {
         println!(
             "[{}] Avg time elapsed: {}ms",
             metric,
-            diff.as_secs_f32(
+            diff.as_secs_f32() * 1000.0 / n_loop as f32
+        );
+        println!()
+    }
+}
