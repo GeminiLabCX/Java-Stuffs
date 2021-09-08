@@ -6,4 +6,14 @@ coverage:
   round: down
   range: "70...100"
 
-par
+parsers:
+  gcov:
+    branch_detection:
+      conditional: yes
+      loop: yes
+      method: no
+      macro: no
+
+comment:
+  layout: "reach,diff,flags,files,footer"
+  behav
