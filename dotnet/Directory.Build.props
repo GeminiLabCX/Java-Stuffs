@@ -10,4 +10,7 @@
   <PropertyGroup>
     <Version>0.1.11</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Auth
+    <Authors>hanabi1224</Authors>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <
