@@ -5,4 +5,4 @@ allow = [
   "Unicode-DFS-2016",
 ]
 copyleft = "deny"
-unlicensed 
+unlicensed = "deny"
