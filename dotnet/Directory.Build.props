@@ -5,4 +5,9 @@
     <LangVersion>latest</LangVersion>
     <Deterministic>true</Deterministic>
     <Features>pdb-path-determinism</Features>
-    <Nullable>enab
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Version>0.1.11</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Auth
