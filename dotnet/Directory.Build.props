@@ -13,4 +13,6 @@
     <Authors>hanabi1224</Authors>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <
+    <PackageProjectUrl>https://github.com/hanabi1224/RuAnnoy</PackageProjectUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>
