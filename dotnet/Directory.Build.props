@@ -15,4 +15,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/hanabi1224/RuAnnoy</PackageProjectUrl>
     <RepositoryType>Git</RepositoryType>
-    <PackageTags>
+    <PackageTags>annoy;rust annoy;</PackageTags>
+  </PropertyGroup>
+  <PropertyGroup>
+    <!-- Optional: Publish the repository URL in the built .nupkg (in the NuSpec <Repository> elem
