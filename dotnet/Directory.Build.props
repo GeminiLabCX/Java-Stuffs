@@ -32,4 +32,8 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Net.Compilers.Toolset" Version="3.*">
       <PrivateAssets>all</PrivateAssets>
-    </PackageRe
+    </PackageReference>
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="8.*">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  
