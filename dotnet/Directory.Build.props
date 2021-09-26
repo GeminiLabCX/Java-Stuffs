@@ -30,4 +30,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageRe
+    <PackageReference Include="Microsoft.Net.Compilers.Toolset" Version="3.*">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageRe
