@@ -5,3 +5,9 @@ using System.Runtime.InteropServices;
 
 namespace RuAnnoy
 {
+    public class AnnoyIndex : DisposeBase, IAnnoyIndex
+    {
+        private IntPtr _indexPtr;
+
+        private AnnoyIndex(
+            IntPtr indexPtr,
