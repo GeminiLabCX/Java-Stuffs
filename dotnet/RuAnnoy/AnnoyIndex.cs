@@ -11,3 +11,9 @@ namespace RuAnnoy
 
         private AnnoyIndex(
             IntPtr indexPtr,
+            int dimension,
+            IndexType type)
+        {
+            _indexPtr = indexPtr;
+            Dimension = dimension;
+            Ty
