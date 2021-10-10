@@ -25,4 +25,11 @@ namespace RuAnnoy
 
         public ulong Size { get; }
 
-       
+        public IndexType Type { get; }
+
+        public static IAnnoyIndex? Load(
+            string path,
+            int dimension,
+            IndexType type)
+        {
+     
