@@ -32,4 +32,7 @@ namespace RuAnnoy
             int dimension,
             IndexType type)
         {
+            var indexPtr = NativeMethods.LoadAnnoyIndex(path, dimension, type);
+            if (indexPtr != IntPtr.Zero)
+            {
      
