@@ -35,4 +35,8 @@ namespace RuAnnoy
             var indexPtr = NativeMethods.LoadAnnoyIndex(path, dimension, type);
             if (indexPtr != IntPtr.Zero)
             {
-     
+                return new AnnoyIndex(indexPtr, dimension, type);
+            }
+            else
+            {
+                return 
