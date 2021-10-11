@@ -39,4 +39,11 @@ namespace RuAnnoy
             }
             else
             {
-                return 
+                return null;
+            }
+        }
+
+        public IReadOnlyList<float> GetItemVector(ulong itemIndex)
+        {
+            if (_indexPtr == IntPtr.Zero)
+       
