@@ -46,4 +46,8 @@ namespace RuAnnoy
         public IReadOnlyList<float> GetItemVector(ulong itemIndex)
         {
             if (_indexPtr == IntPtr.Zero)
-       
+            {
+                throw new ObjectDisposedException("index");
+            }
+
+            var itemVector = new float[Dimension]
