@@ -55,4 +55,10 @@ namespace RuAnnoy
             return itemVector;
         }
 
-        public AnnoyIndexSearchR
+        public AnnoyIndexSearchResult GetNearest(
+            IReadOnlyList<float> queryVector,
+            uint nResult,
+            int searchK,
+            bool shouldIncludeDistance)
+        {
+     
