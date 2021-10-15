@@ -50,4 +50,9 @@ namespace RuAnnoy
                 throw new ObjectDisposedException("index");
             }
 
-            var itemVector = new float[Dimension]
+            var itemVector = new float[Dimension];
+            NativeMethods.GetItemVector(_indexPtr, itemIndex, itemVector);
+            return itemVector;
+        }
+
+        public AnnoyIndexSearchR
