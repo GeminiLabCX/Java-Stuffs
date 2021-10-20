@@ -66,4 +66,8 @@ namespace RuAnnoy
                 throw new ObjectDisposedException("index");
             }
 
-          
+            var searchResultPtr = NativeMethods.GetNearest(
+                  _indexPtr,
+                  queryVector.ToArray(),
+                  nResult,
+                  searc
