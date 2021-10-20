@@ -61,4 +61,9 @@ namespace RuAnnoy
             int searchK,
             bool shouldIncludeDistance)
         {
-     
+            if (_indexPtr == IntPtr.Zero)
+            {
+                throw new ObjectDisposedException("index");
+            }
+
+          
