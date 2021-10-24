@@ -74,4 +74,10 @@ namespace RuAnnoy
                   shouldIncludeDistance);
             try
             {
-                return AnnoyIndexSearchResult.LoadFromPtr(searchResultPtr, shoul
+                return AnnoyIndexSearchResult.LoadFromPtr(searchResultPtr, shouldIncludeDistance);
+            }
+            finally
+            {
+                NativeMethods.FreeSearchResult(searchResultPtr);
+            }
+        }
