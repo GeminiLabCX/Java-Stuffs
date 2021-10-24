@@ -70,4 +70,8 @@ namespace RuAnnoy
                   _indexPtr,
                   queryVector.ToArray(),
                   nResult,
-                  searc
+                  searchK,
+                  shouldIncludeDistance);
+            try
+            {
+                return AnnoyIndexSearchResult.LoadFromPtr(searchResultPtr, shoul
