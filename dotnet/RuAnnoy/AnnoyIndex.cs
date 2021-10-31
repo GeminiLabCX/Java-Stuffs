@@ -81,3 +81,9 @@ namespace RuAnnoy
                 NativeMethods.FreeSearchResult(searchResultPtr);
             }
         }
+
+        public AnnoyIndexSearchResult GetNearestToItem(
+            ulong itemIndex,
+            uint nResult,
+            int searchK,
+            bool sho
