@@ -86,4 +86,9 @@ namespace RuAnnoy
             ulong itemIndex,
             uint nResult,
             int searchK,
-            bool sho
+            bool shouldIncludeDistance)
+        {
+            if (_indexPtr == IntPtr.Zero)
+            {
+                throw new ObjectDisposedException("index");
+    
