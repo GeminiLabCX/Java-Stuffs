@@ -96,3 +96,9 @@ namespace RuAnnoy
             var searchResultPtr = NativeMethods.GetNearestToItem(
                   _indexPtr,
                   itemIndex,
+                  nResult,
+                  searchK,
+                  shouldIncludeDistance);
+            try
+            {
+ 
