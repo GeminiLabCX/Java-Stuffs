@@ -91,4 +91,8 @@ namespace RuAnnoy
             if (_indexPtr == IntPtr.Zero)
             {
                 throw new ObjectDisposedException("index");
-    
+            }
+
+            var searchResultPtr = NativeMethods.GetNearestToItem(
+                  _indexPtr,
+                  itemIndex,
