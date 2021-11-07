@@ -105,4 +105,10 @@ namespace RuAnnoy
             }
             finally
             {
-                Nat
+                NativeMethods.FreeSearchResult(searchResultPtr);
+            }
+        }
+
+        protected override void DisposeResources()
+        {
+    
