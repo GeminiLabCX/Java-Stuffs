@@ -111,4 +111,8 @@ namespace RuAnnoy
 
         protected override void DisposeResources()
         {
-    
+            NativeMethods.FreeAnnoyIndex(_indexPtr);
+            _indexPtr = IntPtr.Zero;
+        }
+    }
+}
