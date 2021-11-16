@@ -3,4 +3,12 @@ using System.Collections.Generic;
 
 namespace RuAnnoy
 {
-    public interface IAnnoyIndex : IDis
+    public interface IAnnoyIndex : IDisposable
+    {
+        int Dimension { get; }
+
+        ulong Size { get; }
+
+        IReadOnlyList<float> GetItemVector(ulong itemIndex);
+
+        
