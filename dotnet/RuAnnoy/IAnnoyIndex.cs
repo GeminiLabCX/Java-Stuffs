@@ -11,4 +11,8 @@ namespace RuAnnoy
 
         IReadOnlyList<float> GetItemVector(ulong itemIndex);
 
-        
+        AnnoyIndexSearchResult GetNearest(
+            IReadOnlyList<float> queryVector,
+            uint nResult,
+            int searchK,
+         
