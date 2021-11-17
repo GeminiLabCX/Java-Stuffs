@@ -15,4 +15,9 @@ namespace RuAnnoy
             IReadOnlyList<float> queryVector,
             uint nResult,
             int searchK,
-         
+            bool shouldIncludeDistance);
+
+        AnnoyIndexSearchResult GetNearestToItem(
+            ulong itemIndex,
+            uint nResult,
+     
