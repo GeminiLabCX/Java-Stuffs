@@ -20,4 +20,7 @@ namespace RuAnnoy
         AnnoyIndexSearchResult GetNearestToItem(
             ulong itemIndex,
             uint nResult,
-     
+            int searchK,
+            bool shouldIncludeDistance);
+    }
+}
