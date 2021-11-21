@@ -19,4 +19,7 @@ namespace RuAnnoy
         [DllImport(DLLPATH, EntryPoint = "get_dimension", CharSet = CharSet.Ansi)]
         internal static extern int GetDimension(IntPtr index);
 
-    
+        [DllImport(DLLPATH, EntryPoint = "get_size", CharSet = CharSet.Ansi)]
+        internal static extern ulong GetSize(IntPtr index);
+
+        [DllImport(DLLPAT
