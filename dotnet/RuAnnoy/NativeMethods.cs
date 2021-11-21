@@ -14,4 +14,9 @@ namespace RuAnnoy
             IndexType indexType);
 
         [DllImport(DLLPATH, EntryPoint = "free_annoy_index", CharSet = CharSet.Ansi)]
-        internal static extern void FreeAnnoyIndex(IntPtr
+        internal static extern void FreeAnnoyIndex(IntPtr index);
+
+        [DllImport(DLLPATH, EntryPoint = "get_dimension", CharSet = CharSet.Ansi)]
+        internal static extern int GetDimension(IntPtr index);
+
+    
