@@ -7,4 +7,8 @@ namespace RuAnnoy
     {
         const string DLLPATH = @"annoy_rs_ffi";
 
-        [DllImport(DLLPATH, EntryPoint = "load_an
+        [DllImport(DLLPATH, EntryPoint = "load_annoy_index", CharSet = CharSet.Ansi)]
+        internal static extern IntPtr LoadAnnoyIndex(
+            string path,
+            Int32 dimension,
+            Ind
