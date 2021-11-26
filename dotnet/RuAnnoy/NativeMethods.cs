@@ -22,4 +22,5 @@ namespace RuAnnoy
         [DllImport(DLLPATH, EntryPoint = "get_size", CharSet = CharSet.Ansi)]
         internal static extern ulong GetSize(IntPtr index);
 
-        [DllImport(DLLPAT
+        [DllImport(DLLPATH, EntryPoint = "get_item_vector", CharSet = CharSet.Ansi)]
+        internal static extern void GetItemVector(IntPtr index, ulong itemIndex, [Out] float[] item
