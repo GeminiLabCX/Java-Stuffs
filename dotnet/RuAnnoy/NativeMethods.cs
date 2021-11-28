@@ -27,4 +27,10 @@ namespace RuAnnoy
 
         [DllImport(DLLPATH, EntryPoint = "get_nearest", CharSet = CharSet.Ansi)]
         internal static extern IntPtr GetNearest(
-            
+            IntPtr index,
+            float[] vector,
+            uint nResults,
+            int searchK,
+            bool shouldIncludeDistance);
+
+        [Dl
