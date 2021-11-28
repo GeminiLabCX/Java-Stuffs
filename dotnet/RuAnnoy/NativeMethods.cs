@@ -23,4 +23,8 @@ namespace RuAnnoy
         internal static extern ulong GetSize(IntPtr index);
 
         [DllImport(DLLPATH, EntryPoint = "get_item_vector", CharSet = CharSet.Ansi)]
-        internal static extern void GetItemVector(IntPtr index, ulong itemIndex, [Out] float[] item
+        internal static extern void GetItemVector(IntPtr index, ulong itemIndex, [Out] float[] itemVector);
+
+        [DllImport(DLLPATH, EntryPoint = "get_nearest", CharSet = CharSet.Ansi)]
+        internal static extern IntPtr GetNearest(
+            
