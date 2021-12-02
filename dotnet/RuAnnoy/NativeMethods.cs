@@ -33,4 +33,5 @@ namespace RuAnnoy
             int searchK,
             bool shouldIncludeDistance);
 
-        [Dl
+        [DllImport(DLLPATH, EntryPoint = "get_nearest_to_item", CharSet = CharSet.Ansi)]
+        internal static extern IntPtr GetNearestToI
