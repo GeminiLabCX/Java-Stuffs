@@ -41,4 +41,5 @@ namespace RuAnnoy
             int searchK,
             bool shouldIncludeDistance);
 
-        [D
+        [DllImport(DLLPATH, EntryPoint = "free_search_result", CharSet = CharSet.Ansi)]
+        internal static extern void FreeSearchResult(IntPtr searchRes
