@@ -42,4 +42,7 @@ namespace RuAnnoy
             bool shouldIncludeDistance);
 
         [DllImport(DLLPATH, EntryPoint = "free_search_result", CharSet = CharSet.Ansi)]
-        internal static extern void FreeSearchResult(IntPtr searchRes
+        internal static extern void FreeSearchResult(IntPtr searchResult);
+
+        [DllImport(DLLPATH, EntryPoint = "get_result_count", CharSet = CharSet.Ansi)]
+        internal static extern ulong GetResultCount(IntPtr search
