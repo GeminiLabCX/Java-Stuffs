@@ -48,4 +48,7 @@ namespace RuAnnoy
         internal static extern ulong GetResultCount(IntPtr searchResult);
 
         [DllImport(DLLPATH, EntryPoint = "get_id_list", CharSet = CharSet.Ansi)]
-        internal static extern IntPtr GetIdList(IntPtr sear
+        internal static extern IntPtr GetIdList(IntPtr searchResult);
+
+        [DllImport(DLLPATH, EntryPoint = "get_distance_list", CharSet = CharSet.Ansi)]
+        int
