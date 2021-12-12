@@ -51,4 +51,6 @@ namespace RuAnnoy
         internal static extern IntPtr GetIdList(IntPtr searchResult);
 
         [DllImport(DLLPATH, EntryPoint = "get_distance_list", CharSet = CharSet.Ansi)]
-        int
+        internal static extern IntPtr GetDistanceList(IntPtr searchResult);
+    }
+}
