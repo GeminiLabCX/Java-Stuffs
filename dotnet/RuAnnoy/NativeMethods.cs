@@ -45,4 +45,7 @@ namespace RuAnnoy
         internal static extern void FreeSearchResult(IntPtr searchResult);
 
         [DllImport(DLLPATH, EntryPoint = "get_result_count", CharSet = CharSet.Ansi)]
-        internal static extern ulong GetResultCount(IntPtr search
+        internal static extern ulong GetResultCount(IntPtr searchResult);
+
+        [DllImport(DLLPATH, EntryPoint = "get_id_list", CharSet = CharSet.Ansi)]
+        internal static extern IntPtr GetIdList(IntPtr sear
