@@ -6,4 +6,6 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <GeneratePackage
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>RuAnnoy</PackageId>
+    <Description>A dotnet binding of rust implementation of Annoy https:
