@@ -12,4 +12,6 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <!-- Optional: Build symbol package (.snup
+    <!-- Optional: Build symbol package (.snupkg) to distribute the PDB containing Source Link -->
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageForm
