@@ -14,4 +14,9 @@
   <PropertyGroup>
     <!-- Optional: Build symbol package (.snupkg) to distribute the PDB containing Source Link -->
     <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageForm
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" $(TargetFramework) != 'netstandard2.1' ">
+    <PackageReference Include="System.Memory" Version="4.*" />
+  </It
