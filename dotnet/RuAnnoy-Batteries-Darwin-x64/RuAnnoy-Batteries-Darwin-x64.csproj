@@ -7,4 +7,9 @@
 
   <PropertyGroup>
     <IncludeBuildOutput>false</IncludeBuildOutput>
-    <GeneratePackageOnBuild>true</GeneratePackag
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>RuAnnoy-Batteries-Darwin-x64</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="..\..\target\release\libannoy_rs_ff
