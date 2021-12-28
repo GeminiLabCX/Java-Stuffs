@@ -8,4 +8,9 @@
   <PropertyGroup>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Pac
+    <PackageId>RuAnnoy-Batteries-Linux-x64</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="..\..\target\release\libannoy_rs_ffi.so">
+      <PackagePat
