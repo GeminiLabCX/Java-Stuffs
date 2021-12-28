@@ -13,4 +13,9 @@
 
   <ItemGroup>
     <Content Include="..\..\target\release\libannoy_rs_ffi.so">
-      <PackagePat
+      <PackagePath>runtimes\linux-x64\native\libannoy_rs_ffi.so</PackagePath>
+      <Pack>true</Pack>
+    </Content>
+  </ItemGroup>
+
+</Project>
