@@ -8,4 +8,9 @@
   <PropertyGroup>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageId>RuAnnoy-Batteries-Windows-x64</
+    <PackageId>RuAnnoy-Batteries-Windows-x64</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="build.props">
+      <PackagePath>build\net45\$(PackageId).props</Packag
