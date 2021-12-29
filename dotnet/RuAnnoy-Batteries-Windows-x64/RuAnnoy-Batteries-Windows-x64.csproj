@@ -6,4 +6,6 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <IncludeB
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>RuAnnoy-Batteries-Windows-x64</
