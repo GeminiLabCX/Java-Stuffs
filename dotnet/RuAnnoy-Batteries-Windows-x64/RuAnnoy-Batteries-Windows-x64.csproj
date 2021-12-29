@@ -17,4 +17,9 @@
       <Pack>true</Pack>
     </Content>
     <Content Include="..\..\target\release\annoy_rs_ffi.dll">
-      <PackagePath>runtimes\win-x64\native\annoy_rs_f
+      <PackagePath>runtimes\win-x64\native\annoy_rs_ffi.dll</PackagePath>
+      <Pack>true</Pack>
+    </Content>
+  </ItemGroup>
+
+</Project>
