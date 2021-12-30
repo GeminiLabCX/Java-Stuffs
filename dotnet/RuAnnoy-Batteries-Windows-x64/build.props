@@ -5,4 +5,5 @@
       <Link>%(Filename)%(Extension)</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGro
+  </ItemGroup>
+</Project>
