@@ -152,3 +152,10 @@ namespace RuAnnoy.Tests
         {
             return Math.Round(v, PRECISION);
         }
+
+        private static double RoundTo(float v)
+        {
+            return Math.Round(v, PRECISION);
+        }
+    }
+}
