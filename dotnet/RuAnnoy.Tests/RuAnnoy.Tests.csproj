@@ -10,4 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Cont
+    <Content Include="../../tests/**/*.ann">
+      <Link>%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+   
