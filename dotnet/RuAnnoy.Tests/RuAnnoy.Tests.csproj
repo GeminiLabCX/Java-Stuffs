@@ -25,4 +25,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <Visible>true</Visible>
     </Content>
-    <Content Incl
+    <Content Include="../../target/release/*.so">
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Vis
