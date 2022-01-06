@@ -21,4 +21,8 @@
       <Visible>true</Visible>
     </Content>
     <Content Include="../../target/release/*.dylib">
-      <Link>%(Fi
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Visible>true</Visible>
+    </Content>
+    <Content Incl
