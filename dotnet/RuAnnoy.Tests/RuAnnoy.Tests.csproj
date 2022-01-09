@@ -28,4 +28,12 @@
     <Content Include="../../target/release/*.so">
       <Link>%(Filename)%(Extension)</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <Vis
+      <Visible>true</Visible>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RuAnnoy\RuAnnoy.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
