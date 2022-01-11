@@ -37,3 +37,6 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="5.*" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.*" />
+    <PackageReference Include=
