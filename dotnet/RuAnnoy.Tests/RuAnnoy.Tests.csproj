@@ -39,4 +39,6 @@
   <ItemGroup>
     <PackageReference Include="FluentAssertions" Version="5.*" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.*" />
-    <PackageReference Include=
+    <PackageReference Include="NUnit" Version="3.*" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.*" />
+    <PackageReference Include="coverlet.msbuild" Version="3.*"
