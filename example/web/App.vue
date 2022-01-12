@@ -88,3 +88,35 @@ export default {
       this.index = load_index(u8a, 5, IndexType.angular);
       this.getItemVector();
     },
+    freeIndex() {
+      this.index?.free();
+      this.index = null;
+    },
+    search() {
+      try {
+        const query = JSON.parse(`[${this.query}]`);
+        this.searchResult = this.index.get_nearest(query, 10, -1, true);
+      } catch (e) {
+        alert(e);
+      }
+    },
+    getItemVector() {
+      try {
+        this.itemVector = this.index?.get_item_vector(this.getItemVectorIndex);
+      } catch (e) {
+        alert(e);
+      }
+    },
+  },
+};
+</script>
+<style lang="scss" scoped>
+.query-box {
+  min-width: 800px;
+}
+.result-table {
+  td {
+    padding: 5px 10px;
+  }
+}
+</style>
