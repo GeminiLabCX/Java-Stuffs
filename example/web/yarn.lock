@@ -228,3 +228,149 @@
   dependencies:
     "@parcel/fs" "2.7.0"
     "@parcel/logger" "2.7.0"
+    "@parcel/utils" "2.7.0"
+    lmdb "2.5.2"
+
+"@parcel/codeframe@2.7.0":
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/@parcel/codeframe/-/codeframe-2.7.0.tgz#b6e4ad6100938edbed1b6c72b37f609e1abaf931"
+  integrity sha512-UTKx0jejJmmO1dwTHSJuRgrO8N6PMlkxRT6sew8N6NC3Bgv6pu0EbO+RtlWt/jCvzcdLOPdIoTzj4MMZvgcMYg==
+  dependencies:
+    chalk "^4.1.0"
+
+"@parcel/compressor-raw@2.7.0":
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/@parcel/compressor-raw/-/compressor-raw-2.7.0.tgz#3f8677e6371ef099cd9e4bd2a899884dc8eb571b"
+  integrity sha512-SCXwnOOQT6EmpusBsYWNQ/RFri+2JnKuE0gMSf2dROl2xbererX45FYzeDplWALCKAdjMNDpFwU+FyMYoVZSCQ==
+  dependencies:
+    "@parcel/plugin" "2.7.0"
+
+"@parcel/config-default@2.7.0":
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/@parcel/config-default/-/config-default-2.7.0.tgz#2f6cec9c185b89e40f343549295cad21295621a8"
+  integrity sha512-ZzsLr97AYrz8c9k6qn3DlqPzifi3vbP7q3ynUrAFxmt0L4+K0H9N508ZkORYmCgaFjLIQ8Y3eWpwCJ0AewPNIg==
+  dependencies:
+    "@parcel/bundler-default" "2.7.0"
+    "@parcel/compressor-raw" "2.7.0"
+    "@parcel/namer-default" "2.7.0"
+    "@parcel/optimizer-css" "2.7.0"
+    "@parcel/optimizer-htmlnano" "2.7.0"
+    "@parcel/optimizer-image" "2.7.0"
+    "@parcel/optimizer-svgo" "2.7.0"
+    "@parcel/optimizer-terser" "2.7.0"
+    "@parcel/packager-css" "2.7.0"
+    "@parcel/packager-html" "2.7.0"
+    "@parcel/packager-js" "2.7.0"
+    "@parcel/packager-raw" "2.7.0"
+    "@parcel/packager-svg" "2.7.0"
+    "@parcel/reporter-dev-server" "2.7.0"
+    "@parcel/resolver-default" "2.7.0"
+    "@parcel/runtime-browser-hmr" "2.7.0"
+    "@parcel/runtime-js" "2.7.0"
+    "@parcel/runtime-react-refresh" "2.7.0"
+    "@parcel/runtime-service-worker" "2.7.0"
+    "@parcel/transformer-babel" "2.7.0"
+    "@parcel/transformer-css" "2.7.0"
+    "@parcel/transformer-html" "2.7.0"
+    "@parcel/transformer-image" "2.7.0"
+    "@parcel/transformer-js" "2.7.0"
+    "@parcel/transformer-json" "2.7.0"
+    "@parcel/transformer-postcss" "2.7.0"
+    "@parcel/transformer-posthtml" "2.7.0"
+    "@parcel/transformer-raw" "2.7.0"
+    "@parcel/transformer-react-refresh-wrap" "2.7.0"
+    "@parcel/transformer-svg" "2.7.0"
+
+"@parcel/core@2.7.0":
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/@parcel/core/-/core-2.7.0.tgz#3310f48230bd618735f199f159f37e6b45ed2710"
+  integrity sha512-7yKZUdh314Q/kU/9+27ZYTfcnXS6VYHuG+iiUlIohnvUUybxLqVJhdMU9Q+z2QcPka1IdJWz4K4Xx0y6/4goyg==
+  dependencies:
+    "@mischnic/json-sourcemap" "^0.1.0"
+    "@parcel/cache" "2.7.0"
+    "@parcel/diagnostic" "2.7.0"
+    "@parcel/events" "2.7.0"
+    "@parcel/fs" "2.7.0"
+    "@parcel/graph" "2.7.0"
+    "@parcel/hash" "2.7.0"
+    "@parcel/logger" "2.7.0"
+    "@parcel/package-manager" "2.7.0"
+    "@parcel/plugin" "2.7.0"
+    "@parcel/source-map" "^2.0.0"
+    "@parcel/types" "2.7.0"
+    "@parcel/utils" "2.7.0"
+    "@parcel/workers" "2.7.0"
+    abortcontroller-polyfill "^1.1.9"
+    base-x "^3.0.8"
+    browserslist "^4.6.6"
+    clone "^2.1.1"
+    dotenv "^7.0.0"
+    dotenv-expand "^5.1.0"
+    json5 "^2.2.0"
+    msgpackr "^1.5.4"
+    nullthrows "^1.1.1"
+    semver "^5.7.1"
+
+"@parcel/css-darwin-arm64@1.12.2":
+  version "1.12.2"
+  resolved "https://registry.yarnpkg.com/@parcel/css-darwin-arm64/-/css-darwin-arm64-1.12.2.tgz#4215585dac699f0f75015f5b47254867ac1221d3"
+  integrity sha512-6VvsoYSltBiUh/uyfPzQ+I3DiTFN7tmRv6zm1LH98J7GGCDDhbYEtbQjjCs15ex6fVn1ORZK0JO+mMlsg1JwTA==
+
+"@parcel/css-darwin-x64@1.12.2":
+  version "1.12.2"
+  resolved "https://registry.yarnpkg.com/@parcel/css-darwin-x64/-/css-darwin-x64-1.12.2.tgz#eeb4e04c512580bd531b5ffa9c34456e9799fdb9"
+  integrity sha512-3J0/LrDvt5vevOisnrE0q5mEcuiAY+K7OZwIv84SAnrbjlL5sshmIaaNzL869kb4thza+RClEj0mS5XTm1IUEw==
+
+"@parcel/css-linux-arm-gnueabihf@1.12.2":
+  version "1.12.2"
+  resolved "https://registry.yarnpkg.com/@parcel/css-linux-arm-gnueabihf/-/css-linux-arm-gnueabihf-1.12.2.tgz#ccd813bbc9b9d845fb8f6ed9c7c22c745cda007b"
+  integrity sha512-OsX7I3dhBvnxEbAH++08RFe7yhjRp33ulzrCvJTMOP9YkxEEJ8qId3sNzJBHIVQzHyTlPTnBRHbSDhU3TFe/eQ==
+
+"@parcel/css-linux-arm64-gnu@1.12.2":
+  version "1.12.2"
+  resolved "https://registry.yarnpkg.com/@parcel/css-linux-arm64-gnu/-/css-linux-arm64-gnu-1.12.2.tgz#7959fbcbd38c9b9c2c24c6c2def4ec2df370b705"
+  integrity sha512-R1Kqw+1Rsru9Q4+qvUEC6B8P21bpqhuF9rv8GmBmmnF1i2hMZ1JiY+uh/ej8IaRV0O3fAHeQGIyGBWx6qWDpcw==
+
+"@parcel/css-linux-arm64-musl@1.12.2":
+  version "1.12.2"
+  resolved "https://registry.yarnpkg.com/@parcel/css-linux-arm64-musl/-/css-linux-arm64-musl-1.12.2.tgz#ffc3fc62db9b8a19f8be61028abbcb7c44d90fa6"
+  integrity sha512-nwixgM4SEgPUQata9aAiJW0A5Q9ms+xim1tXT1i+91kOei4Fu2Wr2OuofMk+mlhbgmGKCTcu4gzMPReGxUhuRA==
+
+"@parcel/css-linux-x64-gnu@1.12.2":
+  version "1.12.2"
+  resolved "https://registry.yarnpkg.com/@parcel/css-linux-x64-gnu/-/css-linux-x64-gnu-1.12.2.tgz#15619756ba62558243ae996e257b1cca90f534eb"
+  integrity sha512-cJYVMHnQSGhDwQByyvjFZppjMBNlgxXl/R4cX5DwrQE0QZmK/42BYnMp92rvoprEG6LRyRoiGtCjyfYTPWajog==
+
+"@parcel/css-linux-x64-musl@1.12.2":
+  version "1.12.2"
+  resolved "https://registry.yarnpkg.com/@parcel/css-linux-x64-musl/-/css-linux-x64-musl-1.12.2.tgz#de61e2bdec54609f7b681acfbd04e9fb57a5ef02"
+  integrity sha512-u9zdO/d831/74Tf+TdPUfaIuB9v6FD4Xz8UdWUDOXgQqaOlnJ9fAsAM39EkoWlMxPPljY3f4ay6irSe1a4XgSA==
+
+"@parcel/css-win32-x64-msvc@1.12.2":
+  version "1.12.2"
+  resolved "https://registry.yarnpkg.com/@parcel/css-win32-x64-msvc/-/css-win32-x64-msvc-1.12.2.tgz#086586fce31d1e05340c2e31efc32d40aa9ee05a"
+  integrity sha512-kCAKr3vKqvPUv9oXBG3pGZQz5il3sEk35dpmTXFa/7eDNKR5XyLpiJs8JwWJTFfuUqroymDSXA1bCcjvNEYcAg==
+
+"@parcel/css@^1.12.2":
+  version "1.12.2"
+  resolved "https://registry.yarnpkg.com/@parcel/css/-/css-1.12.2.tgz#63eacc9fcdf58e4d9639db34271834394705b7b2"
+  integrity sha512-Sa0PvZu5u877CupQA8IjEATqjJFynBfA7LxbcyutFe2LDCRSqB5Bm08jKFScyaz56qjZNIxZxXk2SApNkOvoAA==
+  dependencies:
+    detect-libc "^1.0.3"
+  optionalDependencies:
+    "@parcel/css-darwin-arm64" "1.12.2"
+    "@parcel/css-darwin-x64" "1.12.2"
+    "@parcel/css-linux-arm-gnueabihf" "1.12.2"
+    "@parcel/css-linux-arm64-gnu" "1.12.2"
+    "@parcel/css-linux-arm64-musl" "1.12.2"
+    "@parcel/css-linux-x64-gnu" "1.12.2"
+    "@parcel/css-linux-x64-musl" "1.12.2"
+    "@parcel/css-win32-x64-msvc" "1.12.2"
+
+"@parcel/diagnostic@2.7.0":
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/@parcel/diagnostic/-/diagnostic-2.7.0.tgz#cf2596a20ce9277334616e12bbdac98490189e99"
+  integrity sha512-pdq/cTwVoL0n8yuDCRXFRSQHVWdmmIXPt3R3iT4KtYDYvOrMT2dLPT79IMqQkhYPANW8GuL15n/WxRngfRdkug==
+  dependencies:
+    "@mischnic/json-sourcemap" "^0.1.0"
+    nullthrows "^1.1.1"
