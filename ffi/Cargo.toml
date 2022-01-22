@@ -5,4 +5,16 @@ C FFI bindings to annoy-rs.
 edition = "2021"
 license = "MIT"
 name = "annoy-rs-ffi"
-repository = "https://github.com/hanabi1224
+repository = "https://github.com/hanabi1224/RuAnnoy"
+version = "0.1.0"
+
+publish = false
+
+[features]
+[dependencies]
+annoy-rs = {path = "../"}
+
+libc = "0.2"
+
+[lib]
+crate-type = ["rlib", "cdylib", "stat
