@@ -17,4 +17,10 @@ annoy-rs = {path = "../"}
 libc = "0.2"
 
 [lib]
-crate-type = ["rlib", "cdylib", "stat
+crate-type = ["rlib", "cdylib", "staticlib"]
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = 3
+overflow-checks = false
