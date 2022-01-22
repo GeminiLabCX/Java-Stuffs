@@ -1,1 +1,8 @@
-[pac
+[package]
+description = """
+C FFI bindings to annoy-rs.
+"""
+edition = "2021"
+license = "MIT"
+name = "annoy-rs-ffi"
+repository = "https://github.com/hanabi1224
