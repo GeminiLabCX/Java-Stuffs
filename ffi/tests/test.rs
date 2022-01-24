@@ -7,4 +7,10 @@ mod tests {
     use std::ptr;
     use std::slice;
 
-    const F32
+    const F32_PRECISION: usize = 2;
+    const TEST_INDEX_DIM: usize = 5;
+    const TEST_NODE_COUNT: usize = 100;
+
+    #[test]
+    fn sanity_tests_angular() {
+        s
