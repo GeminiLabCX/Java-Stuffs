@@ -13,4 +13,10 @@ mod tests {
 
     #[test]
     fn sanity_tests_angular() {
-        s
+        sanity_tests_inner(
+            IndexType::Angular,
+            &[
+                -0.388_461_32,
+                0.879_120_65,
+                0.058_009_166,
+          
