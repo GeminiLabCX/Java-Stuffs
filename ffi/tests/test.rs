@@ -30,4 +30,9 @@ mod tests {
     #[test]
     fn sanity_tests_euclidean() {
         sanity_tests_inner(
-        
+            IndexType::Euclidean,
+            &[
+                1.522_306_6,
+                -1.520_689_5,
+                0.226_999_3,
+                0.408_149_2
