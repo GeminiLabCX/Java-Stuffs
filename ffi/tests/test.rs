@@ -41,4 +41,11 @@ mod tests {
             &[0, 84, 20, 49, 94],
             &[0.0, 0.934_874_3, 1.105_167_6, 1.105_779_3, 1.129_980_7],
         );
-    
+    }
+
+    #[test]
+    fn sanity_tests_manhattan() {
+        sanity_tests_inner(
+            IndexType::Manhattan,
+            &[
+              
