@@ -61,4 +61,9 @@ mod tests {
 
     #[test]
     fn sanity_tests_dot() {
-        sa
+        sanity_tests_inner(
+            IndexType::Dot,
+            &[
+                -1.295_846_3,
+                0.268_831_16,
+                0.424_7
