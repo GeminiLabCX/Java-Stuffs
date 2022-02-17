@@ -85,4 +85,8 @@ mod tests {
         let filepath_cstring = CString::new(filepath).unwrap();
         unsafe {
             let index = load_annoy_index(
-                filepath_cstri
+                filepath_cstring.into_raw() as *const c_char,
+                TEST_INDEX_DIM as i32,
+                index_type as u8,
+            );
+            let dim = get
