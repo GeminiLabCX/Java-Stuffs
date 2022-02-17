@@ -82,4 +82,7 @@ mod tests {
         expected_distance_list: &[f32],
     ) {
         let filepath = format!("../tests/index.{index_type}.{TEST_INDEX_DIM}d.ann");
-        
+        let filepath_cstring = CString::new(filepath).unwrap();
+        unsafe {
+            let index = load_annoy_index(
+                filepath_cstri
