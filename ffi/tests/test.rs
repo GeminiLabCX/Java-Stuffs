@@ -78,4 +78,8 @@ mod tests {
     fn sanity_tests_inner(
         index_type: IndexType,
         expected_item3_vec: &[f32],
-        e
+        expected_id_list: &[u64],
+        expected_distance_list: &[f32],
+    ) {
+        let filepath = format!("../tests/index.{index_type}.{TEST_INDEX_DIM}d.ann");
+        
