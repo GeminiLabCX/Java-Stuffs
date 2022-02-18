@@ -89,4 +89,6 @@ mod tests {
                 TEST_INDEX_DIM as i32,
                 index_type as u8,
             );
-            let dim = get
+            let dim = get_dimension(index);
+            assert_eq!(dim, TEST_INDEX_DIM as i32);
+            let v3_raw = alloc(Layout::array::<f32>(dim as usize).unwr
