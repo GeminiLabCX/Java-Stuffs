@@ -91,4 +91,7 @@ mod tests {
             );
             let dim = get_dimension(index);
             assert_eq!(dim, TEST_INDEX_DIM as i32);
-            let v3_raw = alloc(Layout::array::<f32>(dim as usize).unwr
+            let v3_raw = alloc(Layout::array::<f32>(dim as usize).unwrap()) as *mut f32;
+            get_item_vector(index, 3, v3_raw);
+            // let v3_raw = get_item_vector(index, 3);
+            let v3 = slice::from_r
