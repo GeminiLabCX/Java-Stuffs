@@ -99,4 +99,7 @@ mod tests {
 
             let v0_raw = alloc(Layout::array::<f32>(dim as usize).unwrap()) as *mut f32;
             get_item_vector(index, 0, v0_raw);
-            let _v0 = slice::from_raw_parts(v0_raw as *mut f32, dim a
+            let _v0 = slice::from_raw_parts(v0_raw as *mut f32, dim as usize).to_vec();
+            // let v0_raw = get_item_vector(index, 0);
+            assert_eq!(TEST_NODE_COUNT, get_size(index) as usize);
+     
