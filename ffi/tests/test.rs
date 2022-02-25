@@ -102,4 +102,6 @@ mod tests {
             let _v0 = slice::from_raw_parts(v0_raw as *mut f32, dim as usize).to_vec();
             // let v0_raw = get_item_vector(index, 0);
             assert_eq!(TEST_NODE_COUNT, get_size(index) as usize);
-     
+            {
+                let nearest_raw = get_nearest(index, v0_raw, 5, -1, true);
+                let result_count = get_result_c
