@@ -104,4 +104,6 @@ mod tests {
             assert_eq!(TEST_NODE_COUNT, get_size(index) as usize);
             {
                 let nearest_raw = get_nearest(index, v0_raw, 5, -1, true);
-                let result_count = get_result_c
+                let result_count = get_result_count(nearest_raw) as usize;
+                let id_list_raw = get_id_list(nearest_raw);
+                let id_list = slice::from_raw_parts
