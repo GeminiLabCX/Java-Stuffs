@@ -113,4 +113,9 @@ mod tests {
                     slice::from_raw_parts(distance_list_raw as *mut f32, result_count).to_vec();
                 assert_eq!(
                     distance_list.round_to(F32_PRECISION),
-                    expected_distance_list.round_to(F32_
+                    expected_distance_list.round_to(F32_PRECISION)
+                );
+                free_search_result(nearest_raw);
+            }
+            {
+                let nearest_raw
