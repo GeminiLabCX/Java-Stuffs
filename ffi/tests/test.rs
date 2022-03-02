@@ -118,4 +118,6 @@ mod tests {
                 free_search_result(nearest_raw);
             }
             {
-                let nearest_raw
+                let nearest_raw = get_nearest_to_item(index, 0, 5, -1, true);
+                let result_count = get_result_count(nearest_raw) as usize;
+                let id_list_raw = 
