@@ -130,4 +130,8 @@ mod tests {
                     distance_list.round_to(F32_PRECISION),
                     expected_distance_list.round_to(F32_PRECISION)
                 );
-                free_sear
+                free_search_result(nearest_raw);
+            }
+            {
+                let nearest_raw = get_nearest(index, v0_raw, 5, -1, false);
+                let result_coun
