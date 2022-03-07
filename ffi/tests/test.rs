@@ -143,4 +143,8 @@ mod tests {
                     slice::from_raw_parts(distance_list_raw as *mut f32, 0).to_vec();
                 assert_eq!(0, distance_list.len());
                 assert_eq!(0, distance_list.capacity());
-                free_search_result(
+                free_search_result(nearest_raw);
+            }
+            {
+                let nearest_raw = get_nearest_to_item(index, 0, 5, -1, false);
+                let result_count = g
