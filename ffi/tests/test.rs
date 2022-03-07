@@ -138,4 +138,6 @@ mod tests {
                 let id_list_raw = get_id_list(nearest_raw);
                 let id_list = slice::from_raw_parts(id_list_raw as *mut u64, result_count).to_vec();
                 assert_eq!(id_list, expected_id_list);
-                let distance_list_raw = get_d
+                let distance_list_raw = get_distance_list(nearest_raw);
+                let distance_list =
+                    slice::from_raw_parts(distance_list_raw as *mut f32, 
