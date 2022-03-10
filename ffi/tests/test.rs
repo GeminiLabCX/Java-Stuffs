@@ -147,4 +147,6 @@ mod tests {
             }
             {
                 let nearest_raw = get_nearest_to_item(index, 0, 5, -1, false);
-                let result_count = g
+                let result_count = get_result_count(nearest_raw) as usize;
+                let id_list_raw = get_id_list(nearest_raw);
+                let id_list = slice::fr
