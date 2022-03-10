@@ -156,4 +156,12 @@ mod tests {
                     slice::from_raw_parts(distance_list_raw as *mut f32, 0).to_vec();
                 assert_eq!(0, distance_list.len());
                 assert_eq!(0, distance_list.capacity());
-             
+                free_search_result(nearest_raw);
+            }
+            free_annoy_index(index);
+        }
+    }
+
+    #[test]
+    fn invalid_index_cffi() {
+        let ind
