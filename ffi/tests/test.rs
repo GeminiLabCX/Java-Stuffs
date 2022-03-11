@@ -164,4 +164,7 @@ mod tests {
 
     #[test]
     fn invalid_index_cffi() {
-        let ind
+        let index_ptr = unsafe {
+            load_annoy_index(
+                CString::new("invalid_index.ann").unwrap().into_raw() as *const c_char,
+  
