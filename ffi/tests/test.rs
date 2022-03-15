@@ -174,4 +174,9 @@ mod tests {
         assert_eq!(index_ptr, ptr::null());
     }
 
-    pub
+    pub trait RoundToVec<T> {
+        fn round_to(&self, n: usize) -> Vec<T>;
+    }
+
+    impl RoundToVec<f32> for [f32] {
+        fn round_to(&self, n: usize) -> Vec<f32> {
