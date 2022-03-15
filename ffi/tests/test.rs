@@ -167,4 +167,11 @@ mod tests {
         let index_ptr = unsafe {
             load_annoy_index(
                 CString::new("invalid_index.ann").unwrap().into_raw() as *const c_char,
-  
+                TEST_INDEX_DIM as i32,
+                IndexType::Angular as u8,
+            )
+        };
+        assert_eq!(index_ptr, ptr::null());
+    }
+
+    pub
