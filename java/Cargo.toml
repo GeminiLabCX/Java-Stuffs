@@ -1,0 +1,6 @@
+[package]
+description = """
+Java bindings to annoy-rs.
+"""
+edition = "2021"
+license = "MIT
