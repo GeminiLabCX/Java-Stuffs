@@ -180,3 +180,7 @@ mod tests {
 
     impl RoundToVec<f32> for [f32] {
         fn round_to(&self, n: usize) -> Vec<f32> {
+            self.iter()
+                .map(|v| {
+                    let factor = 10.0_f32.powi(n as i32);
+                    (v * factor).round() /
