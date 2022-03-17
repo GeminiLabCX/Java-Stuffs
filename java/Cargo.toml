@@ -3,4 +3,15 @@ description = """
 Java bindings to annoy-rs.
 """
 edition = "2021"
-license = "MIT
+license = "MIT"
+name = "annoy-rs-jni"
+repository = "https://github.com/hanabi1224/RuAnnoy"
+version = "0.1.0"
+
+publish = false
+
+[features]
+default = []
+
+[dependencies]
+annoy-rs = 
