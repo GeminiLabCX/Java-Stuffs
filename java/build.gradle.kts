@@ -121,3 +121,6 @@ tasks.jar {
 //     } else if (os.isWindows()) {
 //         return "windows-$arch"
 //     } else {
+//         throw RuntimeException("Platform " + os.getName() + " is not supported.")
+//     }
+// }
