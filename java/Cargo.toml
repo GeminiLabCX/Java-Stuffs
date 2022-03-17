@@ -14,4 +14,14 @@ publish = false
 default = []
 
 [dependencies]
-annoy-rs = 
+annoy-rs = {path = "../"}
+jni = "0.20"
+libc = "0.2"
+
+[lib]
+crate-type = ["cdylib"]
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = 3
