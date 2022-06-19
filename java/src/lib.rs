@@ -18,4 +18,9 @@ use std::mem;
 ffi_fn! {
     fn Java_com_github_hanabi1224_RuAnnoy_NativeMethods_loadIndex(
         env: JNIEnv,
-        class: JClass
+        class: JClass,
+        path: JString,
+        dimension: jint,
+        index_type: jbyte,
+    ) -> jlong {
+        let result = Java_com_github_hanabi1224_RuAnnoy_NativeM
