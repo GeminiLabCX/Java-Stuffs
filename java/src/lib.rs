@@ -11,4 +11,7 @@ use std::mem;
 /*
  * Class:     com_github_hanabi1224_RuAnnoy_NativeMethods
  * Method:    loadIndex
- * Signature: 
+ * Signature: (Ljava/lang/String;IB)J
+ */
+// JNIEXPORT jlong JNICALL Java_com_github_hanabi1224_RuAnnoy_NativeMethods_loadIndex
+//   (JNIEnv *, jclass, jstrin
