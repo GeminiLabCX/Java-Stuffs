@@ -4,4 +4,11 @@ mod macros;
 use annoy_rs::*;
 use jni::objects::{JClass, JString};
 use jni::sys::{jboolean, jbyte, jclass, jfloatArray, jint, jlong, jlongArray};
-us
+use jni::JNIEnv;
+use std::error::Error;
+use std::mem;
+
+/*
+ * Class:     com_github_hanabi1224_RuAnnoy_NativeMethods
+ * Method:    loadIndex
+ * Signature: 
