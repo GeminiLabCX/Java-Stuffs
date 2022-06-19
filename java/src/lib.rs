@@ -28,4 +28,11 @@ ffi_fn! {
         );
         match result {
             Ok(pointer) => pointer,
-         
+            _ => 0,
+        }
+    }
+}
+
+#[allow(non_snake_case)]
+fn Java_com_github_hanabi1224_RuAnnoy_NativeMethods_loadIndex_inner(
+    env: JNIEnv
