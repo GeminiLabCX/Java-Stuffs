@@ -35,4 +35,10 @@ ffi_fn! {
 
 #[allow(non_snake_case)]
 fn Java_com_github_hanabi1224_RuAnnoy_NativeMethods_loadIndex_inner(
-    env: JNIEnv
+    env: JNIEnv,
+    _class: JClass,
+    path: JString,
+    dimension: jint,
+    index_type: jbyte,
+) -> Result<jlong, Box<dyn Error>> {
+    let ru_path: String = env.get_str
