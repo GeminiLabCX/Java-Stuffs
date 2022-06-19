@@ -23,4 +23,9 @@ ffi_fn! {
         dimension: jint,
         index_type: jbyte,
     ) -> jlong {
-        let result = Java_com_github_hanabi1224_RuAnnoy_NativeM
+        let result = Java_com_github_hanabi1224_RuAnnoy_NativeMethods_loadIndex_inner(
+            env, class, path, dimension, index_type,
+        );
+        match result {
+            Ok(pointer) => pointer,
+         
