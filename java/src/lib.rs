@@ -43,4 +43,10 @@ fn Java_com_github_hanabi1224_RuAnnoy_NativeMethods_loadIndex_inner(
 ) -> Result<jlong, Box<dyn Error>> {
     let ru_path: String = env.get_string(path)?.into();
     let ru_index_type: IndexType = unsafe { mem::transmute(index_type) };
-    let index = AnnoyIndex::load(dimension as 
+    let index = AnnoyIndex::load(dimension as usize, ru_path.as_str(), ru_index_type)?;
+    let ptr = Box::into_raw(Box::new(index));
+    Ok(ptr as jlong)
+}
+
+/*
+ * Class:     com_github_
