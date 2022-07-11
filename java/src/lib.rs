@@ -53,4 +53,9 @@ fn Java_com_github_hanabi1224_RuAnnoy_NativeMethods_loadIndex_inner(
  * Method:    freeIndex
  * Signature: (J)V
  */
-// JNIEXPORT void JNICALL Java_com_github_hanabi1224_RuAnnoy_NativeMethods_f
+// JNIEXPORT void JNICALL Java_com_github_hanabi1224_RuAnnoy_NativeMethods_freeIndex
+//   (JNIEnv *, jclass, jlong);
+ffi_fn! {
+    fn Java_com_github_hanabi1224_RuAnnoy_NativeMethods_freeIndex(
+        env: JNIEnv,
+        cl
