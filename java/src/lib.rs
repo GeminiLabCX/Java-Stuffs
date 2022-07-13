@@ -68,4 +68,8 @@ ffi_fn! {
 }
 
 /*
- * C
+ * Class:     com_github_hanabi1224_RuAnnoy_NativeMethods
+ * Method:    getIndexSize
+ * Signature: (J)J
+ */
+// JNIEXPORT jlong JNICALL Java_com_github_hanab
