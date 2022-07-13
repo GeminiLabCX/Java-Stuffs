@@ -58,4 +58,14 @@ fn Java_com_github_hanabi1224_RuAnnoy_NativeMethods_loadIndex_inner(
 ffi_fn! {
     fn Java_com_github_hanabi1224_RuAnnoy_NativeMethods_freeIndex(
         env: JNIEnv,
-        cl
+        class: JClass,
+        pointer: jlong,
+    ) {
+        unsafe {
+            drop(Box::from_raw(pointer as *mut AnnoyIndex));
+        }
+    }
+}
+
+/*
+ * C
