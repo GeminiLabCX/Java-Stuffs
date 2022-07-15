@@ -72,4 +72,8 @@ ffi_fn! {
  * Method:    getIndexSize
  * Signature: (J)J
  */
-// JNIEXPORT jlong JNICALL Java_com_github_hanab
+// JNIEXPORT jlong JNICALL Java_com_github_hanabi1224_RuAnnoy_NativeMethods_getIndexSize
+//   (JNIEnv *, jclass, jlong);
+ffi_fn! {
+    fn Java_com_github_hanabi1224_RuAnnoy_NativeMethods_getIndexSize(
+        e
