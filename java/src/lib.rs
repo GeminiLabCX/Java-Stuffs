@@ -76,4 +76,9 @@ ffi_fn! {
 //   (JNIEnv *, jclass, jlong);
 ffi_fn! {
     fn Java_com_github_hanabi1224_RuAnnoy_NativeMethods_getIndexSize(
-        e
+        env: JNIEnv,
+        class: JClass,
+        pointer: jlong,
+    ) -> jlong {
+        let index = unsafe { &*(pointer as *const AnnoyIndex) };
+        inde
