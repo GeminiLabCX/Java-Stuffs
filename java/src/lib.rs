@@ -98,4 +98,7 @@ ffi_fn! {
         _class: jclass,
         pointer: jlong,
         item_index: jlong,
-    ) -> jfloatAr
+    ) -> jfloatArray {
+        let index = unsafe { &*(pointer as *const AnnoyIndex) };
+        let vector = index.get_item_vector(item_index as u64);
+        let result = env
