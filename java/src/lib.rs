@@ -93,4 +93,9 @@ ffi_fn! {
 // JNIEXPORT jfloatArray JNICALL Java_com_github_hanabi1224_RuAnnoy_NativeMethods_getItemVector
 //   (JNIEnv *, jclass, jlong, jlong);
 ffi_fn! {
-    fn Java_com_github_
+    fn Java_com_github_hanabi1224_RuAnnoy_NativeMethods_getItemVector(
+        env: JNIEnv,
+        _class: jclass,
+        pointer: jlong,
+        item_index: jlong,
+    ) -> jfloatAr
