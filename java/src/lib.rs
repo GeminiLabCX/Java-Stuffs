@@ -81,4 +81,13 @@ ffi_fn! {
         pointer: jlong,
     ) -> jlong {
         let index = unsafe { &*(pointer as *const AnnoyIndex) };
-        inde
+        index.size as jlong
+    }
+}
+
+/*
+ * Class:     com_github_hanabi1224_RuAnnoy_NativeMethods
+ * Method:    getItemVector
+ * Signature: (JJ)[F
+ */
+// JNIEXPORT jfloatArray JNICALL J
