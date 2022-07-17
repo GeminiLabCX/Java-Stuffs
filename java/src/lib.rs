@@ -101,4 +101,11 @@ ffi_fn! {
     ) -> jfloatArray {
         let index = unsafe { &*(pointer as *const AnnoyIndex) };
         let vector = index.get_item_vector(item_index as u64);
-        let result = env
+        let result = env.new_float_array(index.dimension as i32).unwrap();
+        let _ = env.set_float_array_region(result, 0, vector.as_slice());
+        result
+    }
+}
+
+/*
+ * Class:
