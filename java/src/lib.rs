@@ -127,4 +127,10 @@ ffi_fn! {
         distance_list: jfloatArray,
     ) -> jint {
         let index = unsafe { &*(pointer as *const AnnoyIndex) };
-        let r = index
+        let r = index.get_nearest_to_item(
+            item_index as u64,
+            n_results as usize,
+            search_k,
+            should_include_distance != 0,
+        );
+        let
