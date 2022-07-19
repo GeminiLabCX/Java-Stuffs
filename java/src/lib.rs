@@ -112,4 +112,6 @@ ffi_fn! {
  * Method:    getNearestToItem
  * Signature: (JJIIZ[J[F)I
  */
-// JNIEXPORT jint JNICALL Java_co
+// JNIEXPORT jint JNICALL Java_com_github_hanabi1224_RuAnnoy_NativeMethods_getNearestToItem
+//   (JNIEnv *, jclass, jlong, jlong, jint, jint, jboolean, jlongArray, jfloatArray);
+ffi_fn! {
