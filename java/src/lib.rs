@@ -119,4 +119,8 @@ ffi_fn! {
         env: JNIEnv,
         _class: jclass,
         pointer: jlong,
-   
+        item_index: jlong,
+        n_results: jint,
+        search_k: jint,
+        should_include_distance: jboolean,
+        id_list: jlon
