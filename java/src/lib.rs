@@ -115,3 +115,8 @@ ffi_fn! {
 // JNIEXPORT jint JNICALL Java_com_github_hanabi1224_RuAnnoy_NativeMethods_getNearestToItem
 //   (JNIEnv *, jclass, jlong, jlong, jint, jint, jboolean, jlongArray, jfloatArray);
 ffi_fn! {
+    fn Java_com_github_hanabi1224_RuAnnoy_NativeMethods_getNearestToItem(
+        env: JNIEnv,
+        _class: jclass,
+        pointer: jlong,
+   
