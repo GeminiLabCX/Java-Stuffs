@@ -123,4 +123,8 @@ ffi_fn! {
         n_results: jint,
         search_k: jint,
         should_include_distance: jboolean,
-        id_list: jlon
+        id_list: jlongArray,
+        distance_list: jfloatArray,
+    ) -> jint {
+        let index = unsafe { &*(pointer as *const AnnoyIndex) };
+        let r = index
