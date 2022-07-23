@@ -143,4 +143,8 @@ ffi_fn! {
 }
 
 /*
- * Class:     com_gith
+ * Class:     com_github_hanabi1224_RuAnnoy_NativeMethods
+ * Method:    getNearest
+ * Signature: (J[FIIZ[J[F)I
+ */
+// JNIEXPORT jint JNICALL Java_com_github_hanabi1224_RuAnnoy
