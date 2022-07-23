@@ -133,4 +133,6 @@ ffi_fn! {
             search_k,
             should_include_distance != 0,
         );
-        let
+        let r_id_list: Vec<i64> = r.id_list.iter().map(|&i| i as i64).collect();
+        let _ = env.set_long_array_region(id_list, 0, r_id_list.as_slice());
+        if should_inclu
