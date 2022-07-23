@@ -135,4 +135,12 @@ ffi_fn! {
         );
         let r_id_list: Vec<i64> = r.id_list.iter().map(|&i| i as i64).collect();
         let _ = env.set_long_array_region(id_list, 0, r_id_list.as_slice());
-        if should_inclu
+        if should_include_distance != 0 {
+            let _ = env.set_float_array_region(distance_list, 0, r.distance_list.as_slice());
+        }
+        r.count as jint
+    }
+}
+
+/*
+ * Class:     com_gith
