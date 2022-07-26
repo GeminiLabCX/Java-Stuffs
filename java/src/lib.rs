@@ -150,4 +150,10 @@ ffi_fn! {
 // JNIEXPORT jint JNICALL Java_com_github_hanabi1224_RuAnnoy_NativeMethods_getNearest
 //   (JNIEnv *, jclass, jlong, jfloatArray, jint, jint, jboolean, jlongArray, jfloatArray);
 ffi_fn! {
-    fn Java_com_github_hanabi1224_RuAnnoy_Nat
+    fn Java_com_github_hanabi1224_RuAnnoy_NativeMethods_getNearest(
+        env: JNIEnv,
+        _class: jclass,
+        pointer: jlong,
+        query_vector_j: jfloatArray,
+        n_results: jint,
+        sear
