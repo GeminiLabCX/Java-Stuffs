@@ -156,4 +156,9 @@ ffi_fn! {
         pointer: jlong,
         query_vector_j: jfloatArray,
         n_results: jint,
-        sear
+        search_k: jint,
+        should_include_distance: jboolean,
+        id_list: jlongArray,
+        distance_list: jfloatArray,
+    ) -> jint {
+        let index = unsafe { &*(pointer as *const Ann
