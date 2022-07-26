@@ -161,4 +161,8 @@ ffi_fn! {
         id_list: jlongArray,
         distance_list: jfloatArray,
     ) -> jint {
-        let index = unsafe { &*(pointer as *const Ann
+        let index = unsafe { &*(pointer as *const AnnoyIndex) };
+        let dim = index.dimension;
+
+        let mut query_vector = vec![0_f32; dim];
+        match env.get_float_array_region(query_vec
