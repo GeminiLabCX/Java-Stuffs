@@ -165,4 +165,7 @@ ffi_fn! {
         let dim = index.dimension;
 
         let mut query_vector = vec![0_f32; dim];
-        match env.get_float_array_region(query_vec
+        match env.get_float_array_region(query_vector_j, 0, query_vector.as_mut_slice()) {
+            Err(_) => 0,
+            Ok(_) => {
+                let r = index.get_nearest(
