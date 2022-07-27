@@ -172,4 +172,7 @@ ffi_fn! {
                     query_vector.as_slice(),
                     n_results as usize,
                     search_k,
-                    should_include_distance
+                    should_include_distance != 0,
+                );
+                let r_id_list: Vec<i64> = r.id_list.iter().map(|&i| i as i64).collect();
+                let _ = env.set
