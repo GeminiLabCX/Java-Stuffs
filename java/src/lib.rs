@@ -169,3 +169,7 @@ ffi_fn! {
             Err(_) => 0,
             Ok(_) => {
                 let r = index.get_nearest(
+                    query_vector.as_slice(),
+                    n_results as usize,
+                    search_k,
+                    should_include_distance
