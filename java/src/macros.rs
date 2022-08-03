@@ -8,4 +8,8 @@ macro_rules! ffi_fn {
         #[no_mangle]
         pub extern "system" fn $name($($arg: $arg_ty),*) -> $ret {
             use ::std::io::{self, Write};
-            use ::std::panic::{self, AssertUnw
+            use ::std::panic::{self, AssertUnwindSafe};
+            use ::libc::abort;
+            match panic::catch_unwind(AssertUnwindSafe(move || $body)) {
+                Ok(v) => v,
+    
