@@ -15,4 +15,7 @@ macro_rules! ffi_fn {
                 Err(err) => {
                     let msg = if let Some(&s) = err.downcast_ref::<&str>() {
                         s.to_owned()
-                    } else
+                    } else if let Some(s) = err.downcast_ref::<String>() {
+                        s.to_owned()
+                    } else {
+                        "UN
