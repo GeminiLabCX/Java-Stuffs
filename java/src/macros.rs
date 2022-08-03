@@ -12,4 +12,7 @@ macro_rules! ffi_fn {
             use ::libc::abort;
             match panic::catch_unwind(AssertUnwindSafe(move || $body)) {
                 Ok(v) => v,
-    
+                Err(err) => {
+                    let msg = if let Some(&s) = err.downcast_ref::<&str>() {
+                        s.to_owned()
+                    } else
