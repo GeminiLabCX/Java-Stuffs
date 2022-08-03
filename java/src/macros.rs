@@ -18,4 +18,7 @@ macro_rules! ffi_fn {
                     } else if let Some(s) = err.downcast_ref::<String>() {
                         s.to_owned()
                     } else {
-                        "UN
+                        "UNABLE TO SHOW RESULT OF PANIC.".to_owned()
+                    };
+                    let _ = writeln!(
+                        &mut io:
