@@ -9,4 +9,11 @@ public enum class IndexType(val value: Byte) {
     Angular(0),
     Euclidean(1),
     Manhattan(2),
-    H
+    Hamming(3),
+    Dot(4),
+}
+
+public class AnnoyIndexSearchResult(
+        val count: Int,
+        val distanceIncluded: Boolean,
+        val idList: LongAr
