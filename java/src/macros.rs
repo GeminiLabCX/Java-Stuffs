@@ -33,4 +33,6 @@ macro_rules! ffi_fn {
         ffi_fn!(fn $name($($arg: $arg_ty),*) -> () $body);
     };
     (fn $name:ident($($arg:ident: $arg_ty:ty),*) $body:block) => {
-        ffi_fn!(fn $name($($arg: $ar
+        ffi_fn!(fn $name($($arg: $arg_ty),*) -> () $body);
+    };
+}
