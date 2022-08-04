@@ -25,4 +25,9 @@ macro_rules! ffi_fn {
                         "panic unwind caught, aborting: {:?}",
                         msg);
                     unsafe { abort() }
-   
+                }
+            }
+        }
+    };
+    (fn $name:ident($($arg:ident: $arg_ty:ty),*,) $body:block) => {
+        ffi_fn!(fn $nam
