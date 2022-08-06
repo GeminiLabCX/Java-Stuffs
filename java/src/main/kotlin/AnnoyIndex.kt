@@ -23,4 +23,9 @@ public class AnnoyIndexSearchResult(
 public interface IAnnoyIndex : Closeable {
     val dimension: Int
     val type: IndexType
-    
+    val size: Long
+    fun getItemVector(itemIndex: Long): FloatArray
+    fun getNearest(
+            queryVector: FloatArray,
+            nResult: Int,
+         
