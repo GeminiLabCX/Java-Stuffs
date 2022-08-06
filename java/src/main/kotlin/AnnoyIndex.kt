@@ -16,4 +16,11 @@ public enum class IndexType(val value: Byte) {
 public class AnnoyIndexSearchResult(
         val count: Int,
         val distanceIncluded: Boolean,
-        val idList: LongAr
+        val idList: LongArray,
+        val distanceList: FloatArray
+) {}
+
+public interface IAnnoyIndex : Closeable {
+    val dimension: Int
+    val type: IndexType
+    
