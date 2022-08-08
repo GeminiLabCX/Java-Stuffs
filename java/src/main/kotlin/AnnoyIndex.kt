@@ -28,4 +28,9 @@ public interface IAnnoyIndex : Closeable {
     fun getNearest(
             queryVector: FloatArray,
             nResult: Int,
-         
+            searchK: Int,
+            shouldIncludeDistance: Boolean
+    ): AnnoyIndexSearchResult
+    fun getNearestToItem(
+            itemIndex: Long,
+            nRe
