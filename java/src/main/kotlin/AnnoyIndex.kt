@@ -33,4 +33,12 @@ public interface IAnnoyIndex : Closeable {
     ): AnnoyIndexSearchResult
     fun getNearestToItem(
             itemIndex: Long,
-            nRe
+            nResult: Int,
+            searchK: Int,
+            shouldIncludeDistance: Boolean
+    ): AnnoyIndexSearchResult
+}
+
+public class AnnoyIndex(
+        val pointer: Long,
+      
