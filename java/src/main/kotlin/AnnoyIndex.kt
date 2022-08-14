@@ -45,4 +45,8 @@ public class AnnoyIndex(
         override val type: IndexType,
         override val size: Long
 ) : IAnnoyIndex {
-    public override fun getItemVector
+    public override fun getItemVector(itemIndex: Long): FloatArray {
+        return NativeMethods.getItemVector(this.pointer, itemIndex)
+    }
+
+    public override fun ge
