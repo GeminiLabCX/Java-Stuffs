@@ -49,4 +49,9 @@ public class AnnoyIndex(
         return NativeMethods.getItemVector(this.pointer, itemIndex)
     }
 
-    public override fun ge
+    public override fun getNearest(
+            queryVector: FloatArray,
+            nResult: Int,
+            searchK: Int,
+            shouldIncludeDistance: Boolean
+    ): AnnoyIndexSearchR
