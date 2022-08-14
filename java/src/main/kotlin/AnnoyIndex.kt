@@ -41,4 +41,8 @@ public interface IAnnoyIndex : Closeable {
 
 public class AnnoyIndex(
         val pointer: Long,
-      
+        override val dimension: Int,
+        override val type: IndexType,
+        override val size: Long
+) : IAnnoyIndex {
+    public override fun getItemVector
