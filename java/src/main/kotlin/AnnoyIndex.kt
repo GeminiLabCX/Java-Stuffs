@@ -54,4 +54,7 @@ public class AnnoyIndex(
             nResult: Int,
             searchK: Int,
             shouldIncludeDistance: Boolean
-    ): AnnoyIndexSearchR
+    ): AnnoyIndexSearchResult {
+        var idList = LongArray(nResult)
+        var distanceList = FloatArray(if (shouldIncludeDistance) nResult else 0)
+        val count
