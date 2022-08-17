@@ -66,4 +66,7 @@ public class AnnoyIndex(
                         shouldIncludeDistance,
                         idList,
                         distanceList)
-        if
+        if (count < nResult) {
+            idList = idList.take(count).toLongArray()
+            if (shouldIncludeDistance) {
+                distanceList = distanc
