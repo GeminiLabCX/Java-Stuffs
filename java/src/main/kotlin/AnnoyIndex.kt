@@ -57,4 +57,9 @@ public class AnnoyIndex(
     ): AnnoyIndexSearchResult {
         var idList = LongArray(nResult)
         var distanceList = FloatArray(if (shouldIncludeDistance) nResult else 0)
-        val count
+        val count =
+                NativeMethods.getNearest(
+                        this.pointer,
+                        queryVector,
+                        nResult,
+          
