@@ -62,4 +62,8 @@ public class AnnoyIndex(
                         this.pointer,
                         queryVector,
                         nResult,
-          
+                        searchK,
+                        shouldIncludeDistance,
+                        idList,
+                        distanceList)
+        if
