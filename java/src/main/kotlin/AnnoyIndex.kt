@@ -72,4 +72,11 @@ public class AnnoyIndex(
                 distanceList = distanceList.take(count).toFloatArray()
             }
         }
-        return AnnoyIndexSearchResult(count, shouldIncludeDistance, idList, distan
+        return AnnoyIndexSearchResult(count, shouldIncludeDistance, idList, distanceList)
+    }
+
+    public override fun getNearestToItem(
+            itemIndex: Long,
+            nResult: Int,
+            searchK: Int,
+            sho
