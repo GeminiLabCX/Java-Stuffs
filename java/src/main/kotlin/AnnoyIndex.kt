@@ -82,4 +82,7 @@ public class AnnoyIndex(
             shouldIncludeDistance: Boolean
     ): AnnoyIndexSearchResult {
         var idList = LongArray(nResult)
-        var distanceList = FloatArray(if (shoul
+        var distanceList = FloatArray(if (shouldIncludeDistance) nResult else 0)
+        val count =
+                NativeMethods.getNearestToItem(
+                        this.pointer,
