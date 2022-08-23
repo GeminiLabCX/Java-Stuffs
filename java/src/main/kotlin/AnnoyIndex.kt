@@ -86,3 +86,8 @@ public class AnnoyIndex(
         val count =
                 NativeMethods.getNearestToItem(
                         this.pointer,
+                        itemIndex,
+                        nResult,
+                        searchK,
+                        shouldIncludeDistance,
+  
