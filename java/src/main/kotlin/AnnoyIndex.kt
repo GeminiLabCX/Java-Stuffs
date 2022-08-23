@@ -79,4 +79,7 @@ public class AnnoyIndex(
             itemIndex: Long,
             nResult: Int,
             searchK: Int,
-            sho
+            shouldIncludeDistance: Boolean
+    ): AnnoyIndexSearchResult {
+        var idList = LongArray(nResult)
+        var distanceList = FloatArray(if (shoul
