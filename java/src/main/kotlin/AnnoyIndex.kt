@@ -90,4 +90,7 @@ public class AnnoyIndex(
                         nResult,
                         searchK,
                         shouldIncludeDistance,
-  
+                        idList,
+                        distanceList)
+        if (count < nResult) {
+            idList = idList.take(count).toLongArray
