@@ -103,4 +103,9 @@ public class AnnoyIndex(
 
     public override fun close() {
         NativeMethods.freeIndex(pointer)
-   
+    }
+
+    companion object {
+        val nativeLibraryLoaded = NativeLibraryLoader.loadLibrary("/", "annoy_rs_jni")
+        @JvmStatic
+        public fun isNativ
