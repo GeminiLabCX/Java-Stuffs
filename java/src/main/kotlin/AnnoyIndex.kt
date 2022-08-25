@@ -98,4 +98,9 @@ public class AnnoyIndex(
                 distanceList = distanceList.take(count).toFloatArray()
             }
         }
-        return AnnoyIn
+        return AnnoyIndexSearchResult(count, shouldIncludeDistance, idList, distanceList)
+    }
+
+    public override fun close() {
+        NativeMethods.freeIndex(pointer)
+   
