@@ -93,4 +93,9 @@ public class AnnoyIndex(
                         idList,
                         distanceList)
         if (count < nResult) {
-            idList = idList.take(count).toLongArray
+            idList = idList.take(count).toLongArray()
+            if (shouldIncludeDistance) {
+                distanceList = distanceList.take(count).toFloatArray()
+            }
+        }
+        return AnnoyIn
