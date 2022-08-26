@@ -113,4 +113,8 @@ public class AnnoyIndex(
         }
         @JvmStatic
         public fun tryLoad(
-        
+                path: String,
+                dimension: Int,
+                type: IndexType,
+        ): IAnnoyIndex? {
+      
