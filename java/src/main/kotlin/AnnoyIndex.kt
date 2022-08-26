@@ -117,4 +117,8 @@ public class AnnoyIndex(
                 dimension: Int,
                 type: IndexType,
         ): IAnnoyIndex? {
-      
+            val pointer = NativeMethods.loadIndex(path, dimension, type.value)
+            if (pointer == 0L) {
+                return null
+            }
+   
