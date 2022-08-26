@@ -108,4 +108,9 @@ public class AnnoyIndex(
     companion object {
         val nativeLibraryLoaded = NativeLibraryLoader.loadLibrary("/", "annoy_rs_jni")
         @JvmStatic
-        public fun isNativ
+        public fun isNativeLibraryLoaded(): Boolean {
+            return nativeLibraryLoaded
+        }
+        @JvmStatic
+        public fun tryLoad(
+        
