@@ -121,4 +121,8 @@ public class AnnoyIndex(
             if (pointer == 0L) {
                 return null
             }
-   
+            val size = NativeMethods.getIndexSize(pointer)
+            return AnnoyIndex(pointer, dimension, type, size)
+        }
+    }
+}
