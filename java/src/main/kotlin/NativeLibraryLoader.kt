@@ -5,4 +5,8 @@ import java.io.*
 internal class NativeLibraryLoader {
     companion object {
         val os = System.getProperty("os.name").lowercase()
-        v
+        val pwd = System.getProperty("user.dir")
+        val isWin = os.contains("windows")
+        val isLinux = os.contains("linux")
+
+        fun getLibraryFileName(libName: String)
