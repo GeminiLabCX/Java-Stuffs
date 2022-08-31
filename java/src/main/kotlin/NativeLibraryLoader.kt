@@ -15,4 +15,9 @@ internal class NativeLibraryLoader {
             }
             if (isLinux) {
                 return "lib$libName.so"
-        
+            }
+            return "lib$libName.dylib"
+        }
+
+        fun loadLibrary(prefix: String, libName: String): Boolean {
+            val p
