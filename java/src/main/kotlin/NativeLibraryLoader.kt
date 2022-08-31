@@ -9,4 +9,10 @@ internal class NativeLibraryLoader {
         val isWin = os.contains("windows")
         val isLinux = os.contains("linux")
 
-        fun getLibraryFileName(libName: String)
+        fun getLibraryFileName(libName: String): String {
+            if (isWin) {
+                return "$libName.dll"
+            }
+            if (isLinux) {
+                return "lib$libName.so"
+        
