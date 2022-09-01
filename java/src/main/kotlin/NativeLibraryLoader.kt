@@ -28,4 +28,7 @@ internal class NativeLibraryLoader {
 
             val tmpFile = File.createTempFile(libName, ".tmp")
             tmpFile.deleteOnExit()
-            val outStream = tmpFile
+            val outStream = tmpFile.outputStream()
+            outStream.use {
+                val inStream = url.openStream()
+                inStream.use { inStream.
