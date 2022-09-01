@@ -22,4 +22,10 @@ internal class NativeLibraryLoader {
         fun loadLibrary(prefix: String, libName: String): Boolean {
             val path = "$prefix${getLibraryFileName(libName)}"
             val url = NativeLibraryLoader::class.java.getResource(path)
-            if (url == null) 
+            if (url == null) {
+                return false
+            }
+
+            val tmpFile = File.createTempFile(libName, ".tmp")
+            tmpFile.deleteOnExit()
+            val outStream = tmpFile
