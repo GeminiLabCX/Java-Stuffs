@@ -11,4 +11,8 @@ class AnnoyIndexTest {
         fun testAnnoyIndex() {
                 if (!System.getenv("JITPACK").isNullOrBlank()) {
                         return
-                
+                }
+
+                val indexPath = "$pwd/src/test/resources/index.angular.5d.ann"
+                val index = AnnoyIndex.tryLoad(indexPath, 5, IndexType.Angular)
+       
