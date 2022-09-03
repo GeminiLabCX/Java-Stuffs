@@ -7,3 +7,8 @@ import java.util.Arrays
 import kotlin.test.*
 
 class AnnoyIndexTest {
+        @Test
+        fun testAnnoyIndex() {
+                if (!System.getenv("JITPACK").isNullOrBlank()) {
+                        return
+                
