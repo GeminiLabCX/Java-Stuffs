@@ -15,4 +15,7 @@ class AnnoyIndexTest {
 
                 val indexPath = "$pwd/src/test/resources/index.angular.5d.ann"
                 val index = AnnoyIndex.tryLoad(indexPath, 5, IndexType.Angular)
-       
+                assertTrue(index != null, "indexPath: $indexPath")
+                assertEquals(100, index.size)
+                index.use {
+            
