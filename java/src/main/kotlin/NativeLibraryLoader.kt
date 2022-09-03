@@ -31,4 +31,11 @@ internal class NativeLibraryLoader {
             val outStream = tmpFile.outputStream()
             outStream.use {
                 val inStream = url.openStream()
-                inStream.use { inStream.
+                inStream.use { inStream.copyTo(outStream) }
+            }
+
+            System.load(tmpFile.absolutePath)
+            return true
+        }
+    }
+}
