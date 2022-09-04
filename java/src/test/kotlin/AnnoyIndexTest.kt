@@ -21,4 +21,6 @@ class AnnoyIndexTest {
                         assertEquals(5, index.dimension)
                         val v3 = index.getItemVector(3)
                         assertTrue(
-               
+                                        v3.toTypedArray()
+                                                        .contentDeepEquals(
+                                                
