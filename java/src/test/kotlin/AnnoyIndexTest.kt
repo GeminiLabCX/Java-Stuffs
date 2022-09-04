@@ -18,4 +18,7 @@ class AnnoyIndexTest {
                 assertTrue(index != null, "indexPath: $indexPath")
                 assertEquals(100, index.size)
                 index.use {
-            
+                        assertEquals(5, index.dimension)
+                        val v3 = index.getItemVector(3)
+                        assertTrue(
+               
