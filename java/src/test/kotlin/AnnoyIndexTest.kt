@@ -24,4 +24,5 @@ class AnnoyIndexTest {
                                         v3.toTypedArray()
                                                         .contentDeepEquals(
                                                                         floatArrayOf(
-                                                                                                        -0.3
+                                                                                                        -0.38846132159233093f,
+                                                                                                        0.8791206479
