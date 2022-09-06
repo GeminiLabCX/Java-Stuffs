@@ -25,4 +25,6 @@ class AnnoyIndexTest {
                                                         .contentDeepEquals(
                                                                         floatArrayOf(
                                                                                                         -0.38846132159233093f,
-                                                                                                        0.8791206479
+                                                                                                        0.8791206479072571f,
+                                                                                                        0.05800916627049446f,
+             
