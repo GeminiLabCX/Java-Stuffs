@@ -31,4 +31,7 @@ class AnnoyIndexTest {
                                                                                                         0.40251824259757996f,
                                                                                         )
                                                                                         .toTypedArray()
-                           
+                                                        ),
+                                        Arrays.toString(v3)
+                        )
+                        val v0 = 
