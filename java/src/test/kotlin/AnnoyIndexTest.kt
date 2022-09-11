@@ -37,4 +37,6 @@ class AnnoyIndexTest {
                         val v0 = index.getItemVector(0)
                         var nearest = index.getNearest(v0, 5, -1, true)
                         assertTrue(
-                
+                                        nearest.idList
+                                                        .toTypedArray()
+                                         
