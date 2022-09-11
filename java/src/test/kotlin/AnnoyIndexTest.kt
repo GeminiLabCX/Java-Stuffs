@@ -41,4 +41,5 @@ class AnnoyIndexTest {
                                                         .toTypedArray()
                                                         .contentDeepEquals(
                                                                         longArrayOf(
-   
+                                                                                                        0,
+                                         
