@@ -39,4 +39,6 @@ class AnnoyIndexTest {
                         assertTrue(
                                         nearest.idList
                                                         .toTypedArray()
-                                         
+                                                        .contentDeepEquals(
+                                                                        longArrayOf(
+   
