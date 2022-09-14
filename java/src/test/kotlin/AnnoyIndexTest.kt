@@ -54,4 +54,6 @@ class AnnoyIndexTest {
                         assertEquals(true, nearest.distanceIncluded)
                         assertTrue(
                                         nearest.distanceList
-                                     
+                                                        .toTypedArray()
+                                                        .contentDeepEquals(
+                                  
