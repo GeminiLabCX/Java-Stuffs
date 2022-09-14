@@ -46,4 +46,6 @@ class AnnoyIndexTest {
                                                                                                         37,
                                                                                                         61,
                                                                                                         29
-                                                                                
+                                                                                        )
+                                                                                        .toTypedArray()
+                          
