@@ -48,4 +48,7 @@ class AnnoyIndexTest {
                                                                                                         29
                                                                                         )
                                                                                         .toTypedArray()
-                          
+                                                        ),
+                                        Arrays.toString(nearest.idList)
+                        )
+                        assertEquals
