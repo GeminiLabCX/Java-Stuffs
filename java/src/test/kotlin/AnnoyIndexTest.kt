@@ -59,4 +59,5 @@ class AnnoyIndexTest {
                                                                         floatArrayOf(
                                                                                                         0.0f,
                                                                                                         0.41608825f,
-                      
+                                                                                                        0.5517523f,
+                                                                 
