@@ -57,4 +57,6 @@ class AnnoyIndexTest {
                                                         .toTypedArray()
                                                         .contentDeepEquals(
                                                                         floatArrayOf(
-                                                                                                   
+                                                                                                        0.0f,
+                                                                                                        0.41608825f,
+                      
