@@ -56,4 +56,5 @@ class AnnoyIndexTest {
                                         nearest.distanceList
                                                         .toTypedArray()
                                                         .contentDeepEquals(
-                                  
+                                                                        floatArrayOf(
+                                                                                                   
