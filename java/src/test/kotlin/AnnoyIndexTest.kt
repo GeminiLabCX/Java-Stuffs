@@ -63,4 +63,6 @@ class AnnoyIndexTest {
                                                                                                         0.7342095f,
                                                                                                         0.7592962f
                                                                                         )
-                              
+                                                                                        .toTypedArray()
+                                                        ),
+                                    
