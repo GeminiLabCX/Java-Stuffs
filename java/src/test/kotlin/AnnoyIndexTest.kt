@@ -65,4 +65,7 @@ class AnnoyIndexTest {
                                                                                         )
                                                                                         .toTypedArray()
                                                         ),
-                                    
+                                        Arrays.toString(nearest.distanceList)
+                        )
+                        nearest = index.getNearestToItem(0, 5, -1, false)
+          
