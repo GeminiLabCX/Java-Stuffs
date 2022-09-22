@@ -72,4 +72,6 @@ class AnnoyIndexTest {
                                         nearest.idList
                                                         .toTypedArray()
                                                         .contentDeepEquals(
-                                                                        longAr
+                                                                        longArrayOf(
+                                                                                                        0,
+                                  
