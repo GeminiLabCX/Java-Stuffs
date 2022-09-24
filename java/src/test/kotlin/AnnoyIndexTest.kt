@@ -76,4 +76,6 @@ class AnnoyIndexTest {
                                                                                                         0,
                                                                                                         4,
                                                                                                         37,
-                                                                                                
+                                                                                                        61,
+                                                                                                        29
+         
