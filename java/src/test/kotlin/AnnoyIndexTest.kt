@@ -75,4 +75,5 @@ class AnnoyIndexTest {
                                                                         longArrayOf(
                                                                                                         0,
                                                                                                         4,
-                                                                                 
+                                                                                                        37,
+                                                                                                
