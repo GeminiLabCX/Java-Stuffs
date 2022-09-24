@@ -74,4 +74,5 @@ class AnnoyIndexTest {
                                                         .contentDeepEquals(
                                                                         longArrayOf(
                                                                                                         0,
-                                  
+                                                                                                        4,
+                                                                                 
