@@ -79,4 +79,7 @@ class AnnoyIndexTest {
                                                                                                         61,
                                                                                                         29
                                                                                         )
-                                                             
+                                                                                        .toTypedArray()
+                                                        ),
+                                        Arrays.toString(nearest.idList)
+ 
