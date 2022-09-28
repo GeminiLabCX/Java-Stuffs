@@ -82,4 +82,6 @@ class AnnoyIndexTest {
                                                                                         .toTypedArray()
                                                         ),
                                         Arrays.toString(nearest.idList)
- 
+                        )
+                        assertEquals(false, nearest.distanceIncluded)
+                        assertEquals(0, nearest.dista
