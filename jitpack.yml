@@ -1,2 +1,9 @@
 jdk:
-  - op
+  - openjdk17
+before_install:
+  - uname -a
+  - cat /etc/*-release
+  - strings /lib/x86_64-linux-gnu/libc.so.6 | grep GLIBC
+  - apt update -y
+  - apt upgrade -y libc6
+  # - sudo apt-ge
