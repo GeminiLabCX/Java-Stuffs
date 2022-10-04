@@ -15,4 +15,12 @@ where
     I: Eq,
     O: PartialEq + Eq + PartialOrd,
 {
-    fn eq(&
+    fn eq(&self, other: &Self) -> bool {
+        self.ord == other.ord
+    }
+}
+
+impl<I, O> Ord for BinaryHeapItem<I, O>
+where
+    I: Eq,
+    O: PartialEq + Eq + PartialO
