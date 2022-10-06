@@ -23,4 +23,11 @@ where
 impl<I, O> Ord for BinaryHeapItem<I, O>
 where
     I: Eq,
-    O: PartialEq + Eq + PartialO
+    O: PartialEq + Eq + PartialOrd,
+{
+    fn cmp(&self, other: &Self) -> Ordering {
+        self.partial_cmp(other).unwrap_or(Ordering::Equal)
+    }
+}
+
+impl<I, O> PartialOrd for BinaryHe
