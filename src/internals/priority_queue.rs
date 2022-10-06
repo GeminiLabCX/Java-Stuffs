@@ -30,4 +30,10 @@ where
     }
 }
 
-impl<I, O> PartialOrd for BinaryHe
+impl<I, O> PartialOrd for BinaryHeapItem<I, O>
+where
+    I: Eq,
+    O: PartialEq + Eq + PartialOrd,
+{
+    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
+        self.ord.partial_cmp(&other.
