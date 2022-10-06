@@ -36,4 +36,14 @@ where
     O: PartialEq + Eq + PartialOrd,
 {
     fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
-        self.ord.partial_cmp(&other.
+        self.ord.partial_cmp(&other.ord)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use std::{cmp::Ordering, fmt::Debug};
+
+    pub struct PriorityQueue<K, P>
+    where
+        P: PartialOrd
