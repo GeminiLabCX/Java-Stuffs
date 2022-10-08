@@ -46,4 +46,13 @@ mod tests {
 
     pub struct PriorityQueue<K, P>
     where
-        P: PartialOrd
+        P: PartialOrd,
+    {
+        ord: Ordering,
+        keys: Vec<K>,
+        priorities: Vec<P>,
+    }
+
+    impl<K, P> PriorityQueue<K, P>
+    where
+        P: PartialOrd + De
