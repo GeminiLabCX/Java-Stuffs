@@ -55,4 +55,8 @@ mod tests {
 
     impl<K, P> PriorityQueue<K, P>
     where
-        P: PartialOrd + De
+        P: PartialOrd + Debug,
+    {
+        pub fn with_capacity(capacity: usize, reverse: bool) -> PriorityQueue<K, P> {
+            PriorityQueue {
+                keys: Vec::with_ca
