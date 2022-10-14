@@ -59,4 +59,7 @@ mod tests {
     {
         pub fn with_capacity(capacity: usize, reverse: bool) -> PriorityQueue<K, P> {
             PriorityQueue {
-                keys: Vec::with_ca
+                keys: Vec::with_capacity(capacity),
+                priorities: Vec::with_capacity(capacity),
+                ord: match reverse {
+                    true
