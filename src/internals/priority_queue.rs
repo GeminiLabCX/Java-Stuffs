@@ -62,4 +62,10 @@ mod tests {
                 keys: Vec::with_capacity(capacity),
                 priorities: Vec::with_capacity(capacity),
                 ord: match reverse {
-                    true
+                    true => Ordering::Greater,
+                    _ => Ordering::Less,
+                },
+            }
+        }
+
+        pub fn push(&mut self, key: K, prio
