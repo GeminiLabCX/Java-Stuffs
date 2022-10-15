@@ -68,4 +68,8 @@ mod tests {
             }
         }
 
-        pub fn push(&mut self, key: K, prio
+        pub fn push(&mut self, key: K, priority: P) {
+            self.keys.push(key);
+            self.priorities.push(priority);
+            let pos = self.priorities.len() - 1;
+            
