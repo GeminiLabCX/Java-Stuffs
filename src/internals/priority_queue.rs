@@ -84,4 +84,6 @@ mod tests {
             let keys = self.keys.as_mut_slice();
             while pos > 0 {
                 let p_pos = (pos - 1) / 2;
-                
+                match priorities[p_pos].partial_cmp(&priorities[pos]) {
+                    None => return false,
+                    Some(ord) if ord == self.ord 
