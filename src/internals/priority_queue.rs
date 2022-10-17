@@ -80,4 +80,8 @@ mod tests {
 
         fn max_heap_up_adjust(&mut self, position: usize) -> bool {
             let mut pos = position;
-            let priorities = self.priorities.as_mut_s
+            let priorities = self.priorities.as_mut_slice();
+            let keys = self.keys.as_mut_slice();
+            while pos > 0 {
+                let p_pos = (pos - 1) / 2;
+                
