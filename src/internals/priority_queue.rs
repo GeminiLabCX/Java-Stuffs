@@ -76,4 +76,8 @@ mod tests {
                 self.keys.pop();
                 self.priorities.pop();
             }
-       
+        }
+
+        fn max_heap_up_adjust(&mut self, position: usize) -> bool {
+            let mut pos = position;
+            let priorities = self.priorities.as_mut_s
