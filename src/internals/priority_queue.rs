@@ -98,4 +98,7 @@ mod tests {
         }
 
         fn max_heap_down_adjust(&mut self, position: usize) -> bool {
-            l
+            let len = self.len();
+            let mut pos = position;
+            let priorities = self.priorities.as_mut_slice();
+            let keys = self.keys.as_mut_slic
