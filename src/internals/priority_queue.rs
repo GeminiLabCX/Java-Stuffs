@@ -86,4 +86,9 @@ mod tests {
                 let p_pos = (pos - 1) / 2;
                 match priorities[p_pos].partial_cmp(&priorities[pos]) {
                     None => return false,
-                    Some(ord) if ord == self.ord 
+                    Some(ord) if ord == self.ord => {
+                        priorities.swap(pos, p_pos);
+                        keys.swap(pos, p_pos);
+                        pos = p_pos;
+                    }
+                    _
