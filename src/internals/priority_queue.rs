@@ -91,4 +91,11 @@ mod tests {
                         keys.swap(pos, p_pos);
                         pos = p_pos;
                     }
-                    _
+                    _ => return true,
+                }
+            }
+            true
+        }
+
+        fn max_heap_down_adjust(&mut self, position: usize) -> bool {
+            l
