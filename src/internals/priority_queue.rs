@@ -101,4 +101,10 @@ mod tests {
             let len = self.len();
             let mut pos = position;
             let priorities = self.priorities.as_mut_slice();
-            let keys = self.keys.as_mut_slic
+            let keys = self.keys.as_mut_slice();
+            loop {
+                let lc_pos = pos * 2 + 1;
+                let rc_pos = pos * 2 + 2;
+                let mut largest_pos = pos;
+                if lc_pos < len {
+    
