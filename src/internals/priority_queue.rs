@@ -119,4 +119,7 @@ mod tests {
                         Some(ord) if ord == self.ord => rc_pos,
                         _ => largest_pos,
                     };
-            
+                }
+                if largest_pos != pos {
+                    priorities.swap(largest_pos, pos);
+                    keys.swap(largest_pos
