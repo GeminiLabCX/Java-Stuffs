@@ -107,4 +107,6 @@ mod tests {
                 let rc_pos = pos * 2 + 2;
                 let mut largest_pos = pos;
                 if lc_pos < len {
-    
+                    largest_pos = match priorities[largest_pos].partial_cmp(&priorities[lc_pos]) {
+                        None => return false,
+      
