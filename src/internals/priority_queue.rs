@@ -109,4 +109,8 @@ mod tests {
                 if lc_pos < len {
                     largest_pos = match priorities[largest_pos].partial_cmp(&priorities[lc_pos]) {
                         None => return false,
-      
+                        Some(ord) if ord == self.ord => lc_pos,
+                        _ => largest_pos,
+                    };
+                }
+              
