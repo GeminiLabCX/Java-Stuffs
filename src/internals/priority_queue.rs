@@ -133,4 +133,7 @@ mod tests {
 
         // fn max_heap_build(&mut self) {
         //     let len = self.len();
-        //     let priorities = self.priorities.a
+        //     let priorities = self.priorities.as_mut_slice();
+        //     let keys = self.keys.as_mut_slice();
+        //     for pos in (0..len / 2).rev() {
+        //         let lc_pos = pos * 2 + 
