@@ -122,4 +122,10 @@ mod tests {
                 }
                 if largest_pos != pos {
                     priorities.swap(largest_pos, pos);
-                    keys.swap(largest_pos
+                    keys.swap(largest_pos, pos);
+                    pos = largest_pos;
+                } else {
+                    break;
+                }
+            }
+            true
