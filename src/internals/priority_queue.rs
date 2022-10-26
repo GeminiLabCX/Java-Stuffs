@@ -129,3 +129,8 @@ mod tests {
                 }
             }
             true
+        }
+
+        // fn max_heap_build(&mut self) {
+        //     let len = self.len();
+        //     let priorities = self.priorities.a
