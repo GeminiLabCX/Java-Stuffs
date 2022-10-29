@@ -147,4 +147,6 @@ mod tests {
         //             };
         //         }
         //         if rc_pos < len {
-  
+        //             largest_pos = match priorities[largest_pos].partial_cmp(&priorities[rc_pos]) {
+        //                 None => return,
+        //                
