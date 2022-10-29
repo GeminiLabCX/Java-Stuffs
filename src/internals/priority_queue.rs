@@ -136,4 +136,8 @@ mod tests {
         //     let priorities = self.priorities.as_mut_slice();
         //     let keys = self.keys.as_mut_slice();
         //     for pos in (0..len / 2).rev() {
-        //         let lc_pos = pos * 2 + 
+        //         let lc_pos = pos * 2 + 1;
+        //         let rc_pos = pos * 2 + 2;
+        //         let mut largest_pos = pos;
+        //         if lc_pos < len {
+        //             largest_pos = 
