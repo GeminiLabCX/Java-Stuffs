@@ -171,4 +171,14 @@ mod tests {
                 }
                 return Some((k, p));
             }
-         
+            None
+        }
+
+        pub fn len(&self) -> usize {
+            self.keys.len()
+        }
+    }
+
+    #[test]
+    fn test_pq_1() {
+        te
