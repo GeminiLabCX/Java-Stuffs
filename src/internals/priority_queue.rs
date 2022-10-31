@@ -161,4 +161,8 @@ mod tests {
         // }
 
         pub fn pop(&mut self) -> Option<(K, P)> {
-            let len = self.len(
+            let len = self.len();
+            if len > 0 {
+                let k = self.keys.swap_remove(0);
+                let p = self.priorities.swap_remove(0);
+               
