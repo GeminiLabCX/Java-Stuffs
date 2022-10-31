@@ -165,4 +165,10 @@ mod tests {
             if len > 0 {
                 let k = self.keys.swap_remove(0);
                 let p = self.priorities.swap_remove(0);
-               
+                if len > 2 {
+                    // self.max_heap_build();
+                    self.max_heap_down_adjust(0);
+                }
+                return Some((k, p));
+            }
+         
