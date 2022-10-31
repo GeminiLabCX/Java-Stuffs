@@ -155,4 +155,10 @@ mod tests {
         //         }
         //         if largest_pos != pos {
         //             priorities.swap(largest_pos, pos);
-        //             keys.swap(largest_pos, 
+        //             keys.swap(largest_pos, pos);
+        //         }
+        //     }
+        // }
+
+        pub fn pop(&mut self) -> Option<(K, P)> {
+            let len = self.len(
