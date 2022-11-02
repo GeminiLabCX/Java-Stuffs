@@ -181,4 +181,9 @@ mod tests {
 
     #[test]
     fn test_pq_1() {
-        te
+        test_qp_inner(vec![5, 7, 9, 2, 4, 1].as_mut_slice());
+    }
+
+    #[test]
+    fn test_pq_2() {
+        test_qp_inner(vec![1, 2, 3, 4, 5, 6, 7, 8, 9
