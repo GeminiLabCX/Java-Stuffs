@@ -186,4 +186,10 @@ mod tests {
 
     #[test]
     fn test_pq_2() {
-        test_qp_inner(vec![1, 2, 3, 4, 5, 6, 7, 8, 9
+        test_qp_inner(vec![1, 2, 3, 4, 5, 6, 7, 8, 9].as_mut_slice());
+    }
+
+    #[test]
+    fn test_pq_3() {
+        test_qp_inner(vec![9, 8, 7, 6, 5, 4, 3, 2, 1].as_mut_slice());
+   
