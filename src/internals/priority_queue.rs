@@ -192,4 +192,8 @@ mod tests {
     #[test]
     fn test_pq_3() {
         test_qp_inner(vec![9, 8, 7, 6, 5, 4, 3, 2, 1].as_mut_slice());
-   
+    }
+
+    fn test_qp_inner<T: PartialOrd + Debug + Copy>(s: &mut [T]) {
+        let mut pq = PriorityQueue::with_capacity(s.len(), false);
+        for &i in 
