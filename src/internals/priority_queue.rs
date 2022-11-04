@@ -196,4 +196,10 @@ mod tests {
 
     fn test_qp_inner<T: PartialOrd + Debug + Copy>(s: &mut [T]) {
         let mut pq = PriorityQueue::with_capacity(s.len(), false);
-        for &i in 
+        for &i in s.iter() {
+            pq.push(i, i);
+        }
+        assert_eq!(pq.len(), s.len());
+
+        let mut sorted = Vec::with_capacity(s.len());
+        while pq
