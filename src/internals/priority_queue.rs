@@ -208,4 +208,13 @@ mod tests {
             }
         }
 
-        s.sort_by(|a, b| b.parti
+        s.sort_by(|a, b| b.partial_cmp(a).unwrap());
+        assert_eq!(s, sorted.as_slice());
+    }
+}
+
+#[cfg(test)]
+#[cfg(nightly)]
+mod bench {
+    use super::tests::*;
+    use super::*;
