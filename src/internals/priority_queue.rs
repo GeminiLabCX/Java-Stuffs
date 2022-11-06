@@ -202,4 +202,10 @@ mod tests {
         assert_eq!(pq.len(), s.len());
 
         let mut sorted = Vec::with_capacity(s.len());
-        while pq
+        while pq.len() > 0 {
+            if let Some((k, _p)) = pq.pop() {
+                sorted.push(k);
+            }
+        }
+
+        s.sort_by(|a, b| b.parti
