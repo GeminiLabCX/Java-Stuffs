@@ -227,4 +227,11 @@ mod bench {
         let input = get_input();
         bencher.iter(|| {
             let mut pq = PriorityQueue::with_capacity(input.len(), false);
-            for &i in input.ite
+            for &i in input.iter() {
+                pq.push(i, i);
+            }
+            while pq.len() > 0 {
+                pq.pop();
+            }
+        });
+    
