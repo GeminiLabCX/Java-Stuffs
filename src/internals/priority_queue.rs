@@ -224,4 +224,7 @@ mod bench {
 
     #[bench]
     fn bench_pq(bencher: &mut Bencher) {
-        le
+        let input = get_input();
+        bencher.iter(|| {
+            let mut pq = PriorityQueue::with_capacity(input.len(), false);
+            for &i in input.ite
