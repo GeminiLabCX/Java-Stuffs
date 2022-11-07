@@ -240,4 +240,7 @@ mod bench {
     fn bench_binary_heap(bencher: &mut Bencher) {
         let input = get_input();
         bencher.iter(|| {
- 
+            let mut pq = BinaryHeap::with_capacity(input.len());
+            for &i in input.iter() {
+                pq.push(BinaryHeapItem { item: i, ord: i });
+      
