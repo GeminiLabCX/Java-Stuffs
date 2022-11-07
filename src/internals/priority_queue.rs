@@ -234,4 +234,10 @@ mod bench {
                 pq.pop();
             }
         });
-    
+    }
+
+    #[bench]
+    fn bench_binary_heap(bencher: &mut Bencher) {
+        let input = get_input();
+        bencher.iter(|| {
+ 
