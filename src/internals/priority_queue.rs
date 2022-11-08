@@ -251,4 +251,11 @@ mod bench {
     }
 
     fn get_input() -> Vec<i32> {
-        let cap
+        let capacity = 1024;
+        let mut vec = Vec::with_capacity(capacity);
+        for i in 0..capacity {
+            vec.push(i as i32);
+        }
+        vec
+    }
+}
