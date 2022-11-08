@@ -243,4 +243,12 @@ mod bench {
             let mut pq = BinaryHeap::with_capacity(input.len());
             for &i in input.iter() {
                 pq.push(BinaryHeapItem { item: i, ord: i });
-      
+            }
+            while pq.len() > 0 {
+                pq.pop();
+            }
+        });
+    }
+
+    fn get_input() -> Vec<i32> {
+        let cap
