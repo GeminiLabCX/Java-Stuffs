@@ -16,4 +16,5 @@ impl StorageExtensions for memmap2::Mmap {
     }
 
     fn read_f32(&self, idx: usize) -> f32 {
-  
+        // let ptr: *const f32 = unsafe { mem::transmute(&self[idx]) };
+        let ptr: *const f32 = unsafe { mem::transmute(self.as_ptr().ad
