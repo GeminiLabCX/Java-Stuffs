@@ -11,4 +11,9 @@ pub(crate) trait StorageExtensions {
 impl StorageExtensions for memmap2::Mmap {
     fn read_i32(&self, idx: usize) -> i32 {
         // let ptr: *const i32 = unsafe { mem::transmute(&self[idx]) };
-        let ptr: 
+        let ptr: *const i32 = unsafe { mem::transmute(self.as_ptr().add(idx)) };
+        unsafe { *ptr }
+    }
+
+    fn read_f32(&self, idx: usize) -> f32 {
+  
