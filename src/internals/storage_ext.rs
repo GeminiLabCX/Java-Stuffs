@@ -40,4 +40,7 @@ impl StorageExtensions for Vec<u8> {
     }
 
     fn read_slice<T: Sized>(&self, idx: usize, len: usize) -> &[T] {
-        let ptr: *const T = unsafe { mem::transmut
+        let ptr: *const T = unsafe { mem::transmute(self.as_ptr().add(idx)) };
+        unsafe { slice::from_raw_parts(ptr, len) }
+    }
+}
