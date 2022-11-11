@@ -35,4 +35,9 @@ impl StorageExtensions for Vec<u8> {
     }
 
     fn read_f32(&self, idx: usize) -> f32 {
-        let ptr: *const f32 = unsafe { mem::transmute(s
+        let ptr: *const f32 = unsafe { mem::transmute(self.as_ptr().add(idx)) };
+        unsafe { *ptr }
+    }
+
+    fn read_slice<T: Sized>(&self, idx: usize, len: usize) -> &[T] {
+        let ptr: *const T = unsafe { mem::transmut
