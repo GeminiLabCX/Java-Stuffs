@@ -22,4 +22,6 @@ impl StorageExtensions for memmap2::Mmap {
     }
 
     fn read_slice<T: Sized>(&self, idx: usize, len: usize) -> &[T] {
-        // let ptr: *const T = unsafe { me
+        // let ptr: *const T = unsafe { mem::transmute(&self[idx]) };
+        let ptr: *const T = unsafe { mem::transmute(self.as_ptr().add(idx)) };
+        unsafe { slice::from_ra
