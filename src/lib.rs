@@ -6,4 +6,14 @@
 #[macro_use]
 extern crate cfg_if;
 
-pub(crate) mod internals
+pub(crate) mod internals;
+
+mod types;
+pub use types::*;
+
+#[cfg(target_arch = "wasm32")]
+pub mod wasm_exports;
+
+#[cfg(test)]
+mod tests {
+    pub trait RoundTo<T>
