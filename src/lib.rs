@@ -16,4 +16,9 @@ pub mod wasm_exports;
 
 #[cfg(test)]
 mod tests {
-    pub trait RoundTo<T>
+    pub trait RoundTo<T> {
+        fn round_to(&self, n: usize) -> T;
+    }
+
+    impl RoundTo<f32> for f32 {
+        fn round_to(&self, n: usiz
