@@ -21,4 +21,9 @@ mod tests {
     }
 
     impl RoundTo<f32> for f32 {
-        fn round_to(&self, n: usiz
+        fn round_to(&self, n: usize) -> f32 {
+            let factor = 10.0_f32.powi(n as i32);
+            (self * factor).round() / factor
+        }
+    }
+}
