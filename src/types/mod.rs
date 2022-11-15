@@ -14,4 +14,11 @@ use crate::internals::storage_ext::StorageExtensions;
 #[derive(Debug, Clone)]
 pub struct AnnoyIndexSearchResult {
     pub count: usize,
-    pub is_distance
+    pub is_distance_included: bool,
+    pub id_list: Vec<u64>,
+    pub distance_list: Vec<f32>,
+}
+
+#[repr(u8)]
+#[derive(PartialEq, Eq, Debug, Clone)]
+#[cfg_
