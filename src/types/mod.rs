@@ -25,4 +25,12 @@ pub struct AnnoyIndexSearchResult {
 // #[wasm_bindgen::prelude::wasm_bindgen]
 pub enum IndexType {
     Angular = 0,
-   
+    Euclidean = 1,
+    Manhattan = 2,
+    Hamming = 3,
+    Dot = 4,
+}
+
+impl Display for IndexType {
+    fn fmt(&self, f: &mut Formatter<'_>) -> Result {
+        let r = form
