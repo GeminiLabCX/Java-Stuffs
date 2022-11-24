@@ -21,4 +21,8 @@ pub struct AnnoyIndexSearchResult {
 
 #[repr(u8)]
 #[derive(PartialEq, Eq, Debug, Clone)]
-#[cfg_
+#[cfg_attr(target_arch = "wasm32", wasm_bindgen::prelude::wasm_bindgen)]
+// #[wasm_bindgen::prelude::wasm_bindgen]
+pub enum IndexType {
+    Angular = 0,
+   
