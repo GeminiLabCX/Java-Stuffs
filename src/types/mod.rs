@@ -33,4 +33,11 @@ pub enum IndexType {
 
 impl Display for IndexType {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result {
-        let r = form
+        let r = format!("{self:?}").to_lowercase();
+        f.write_str(&r)
+    }
+}
+
+#[derive(Debug)]
+pub(crate) enum Storage {
+    #[cfg(not(target_arch = "wasm32"))
