@@ -40,4 +40,10 @@ impl Display for IndexType {
 
 #[derive(Debug)]
 pub(crate) enum Storage {
-    #[cfg(not(target_arch = "wasm32"))
+    #[cfg(not(target_arch = "wasm32"))]
+    Mmap(Box<memmap2::Mmap>),
+    Buffer(Vec<u8>),
+}
+
+impl StorageExtensions for Storage {
+    fn read_i32(&self, idx: usiz
