@@ -50,4 +50,10 @@ impl StorageExtensions for Storage {
         match self {
             #[cfg(not(target_arch = "wasm32"))]
             Self::Mmap(mmap) => mmap.read_i32(idx),
-            S
+            Self::Buffer(buffer) => buffer.read_i32(idx),
+        }
+    }
+
+    fn read_f32(&self, idx: usize) -> f32 {
+        match self {
+            #[cfg(not(t
