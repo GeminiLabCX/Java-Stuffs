@@ -46,4 +46,8 @@ pub(crate) enum Storage {
 }
 
 impl StorageExtensions for Storage {
-    fn read_i32(&self, idx: usiz
+    fn read_i32(&self, idx: usize) -> i32 {
+        match self {
+            #[cfg(not(target_arch = "wasm32"))]
+            Self::Mmap(mmap) => mmap.read_i32(idx),
+            S
