@@ -62,4 +62,7 @@ impl StorageExtensions for Storage {
         }
     }
 
-    fn rea
+    fn read_slice<T: Sized>(&self, idx: usize, len: usize) -> &[T] {
+        match self {
+            #[cfg(not(target_arch = "wasm32"))]
+            Self::Mmap(mmap) 
