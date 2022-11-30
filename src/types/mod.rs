@@ -65,4 +65,11 @@ impl StorageExtensions for Storage {
     fn read_slice<T: Sized>(&self, idx: usize, len: usize) -> &[T] {
         match self {
             #[cfg(not(target_arch = "wasm32"))]
-            Self::Mmap(mmap) 
+            Self::Mmap(mmap) => mmap.read_slice(idx, len),
+            Self::Buffer(buffer) => buffer.read_slice(idx, len),
+        }
+    }
+}
+
+impl Index<usize> for Storage {
+    ty
