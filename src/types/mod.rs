@@ -76,4 +76,11 @@ impl Index<usize> for Storage {
     fn index(&self, index: usize) -> &Self::Output {
         match self {
             #[cfg(not(target_arch = "wasm32"))]
-   
+            Self::Mmap(mmap) => &mmap[index],
+            Self::Buffer(buffer) => &buffer[index],
+        }
+    }
+}
+
+pub struct AnnoyIndex {
+    pub
