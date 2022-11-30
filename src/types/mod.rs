@@ -72,4 +72,8 @@ impl StorageExtensions for Storage {
 }
 
 impl Index<usize> for Storage {
-    ty
+    type Output = u8;
+    fn index(&self, index: usize) -> &Self::Output {
+        match self {
+            #[cfg(not(target_arch = "wasm32"))]
+   
