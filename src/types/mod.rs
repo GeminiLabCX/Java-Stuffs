@@ -83,4 +83,9 @@ impl Index<usize> for Storage {
 }
 
 pub struct AnnoyIndex {
-    pub
+    pub dimension: usize,
+    pub index_type: IndexType,
+    pub node_size: usize,
+    pub size: usize,
+    pub(crate) max_descendants: i32,
+    pub(crate) offset_before_chil
