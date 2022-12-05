@@ -88,4 +88,8 @@ pub struct AnnoyIndex {
     pub node_size: usize,
     pub size: usize,
     pub(crate) max_descendants: i32,
-    pub(crate) offset_before_chil
+    pub(crate) offset_before_children: usize,
+    pub(crate) node_header_size: usize,
+    pub(crate) storage: Storage,
+    pub(crate) roots: Vec<usize>,
+}
