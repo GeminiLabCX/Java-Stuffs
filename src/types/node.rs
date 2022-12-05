@@ -9,4 +9,9 @@ pub(crate) struct Node {
 impl Node {
     pub fn new_with_id(
         id: usize,
-        
+        node_size: usize,
+        index_type: &IndexType,
+        storage: &Storage,
+    ) -> Node {
+        let offset = id * node_size;
+        le
