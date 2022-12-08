@@ -30,4 +30,7 @@ impl NodeHeader {
     pub fn new(offset: usize, index_type: &IndexType, storage: &Storage) -> NodeHeader {
         match index_type {
             IndexType::Angular => {
-                NodeHeader::Angula
+                NodeHeader::Angular(unsafe { *NodeHeaderAngular::read(storage, offset) })
+            }
+            IndexType::Euclidean | IndexType::Manhattan => {
+                NodeHeader::Minkowski(
