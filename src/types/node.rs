@@ -14,4 +14,11 @@ impl Node {
         storage: &Storage,
     ) -> Node {
         let offset = id * node_size;
-        le
+        let header = NodeHeader::new(offset, index_type, storage);
+        Node { offset, header }
+    }
+}
+
+#[repr(C)]
+pub(crate) enum NodeHeader {
+  
