@@ -27,4 +27,7 @@ pub(crate) enum NodeHeader {
 }
 
 impl NodeHeader {
-    pub fn new(offset: usi
+    pub fn new(offset: usize, index_type: &IndexType, storage: &Storage) -> NodeHeader {
+        match index_type {
+            IndexType::Angular => {
+                NodeHeader::Angula
