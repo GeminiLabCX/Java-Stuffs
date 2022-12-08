@@ -21,4 +21,10 @@ impl Node {
 
 #[repr(C)]
 pub(crate) enum NodeHeader {
-  
+    Angular(NodeHeaderAngular),
+    Minkowski(NodeHeaderMinkowski),
+    Dot(NodeHeaderDot),
+}
+
+impl NodeHeader {
+    pub fn new(offset: usi
