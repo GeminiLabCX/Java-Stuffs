@@ -33,4 +33,6 @@ impl NodeHeader {
                 NodeHeader::Angular(unsafe { *NodeHeaderAngular::read(storage, offset) })
             }
             IndexType::Euclidean | IndexType::Manhattan => {
-                NodeHeader::Minkowski(
+                NodeHeader::Minkowski(unsafe { *NodeHeaderMinkowski::read(storage, offset) })
+            }
+            IndexType::Dot => NodeHeader::Dot(unsafe { *NodeHeaderDot::read(storag
