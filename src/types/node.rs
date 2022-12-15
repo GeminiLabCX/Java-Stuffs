@@ -35,4 +35,10 @@ impl NodeHeader {
             IndexType::Euclidean | IndexType::Manhattan => {
                 NodeHeader::Minkowski(unsafe { *NodeHeaderMinkowski::read(storage, offset) })
             }
-            IndexType::Dot => NodeHeader::Dot(unsafe { *NodeHeaderDot::read(storag
+            IndexType::Dot => NodeHeader::Dot(unsafe { *NodeHeaderDot::read(storage, offset) }),
+            _ => unimplemented!("Index type not supported"),
+        }
+    }
+
+    pub fn get_n_descendant(&self) -> i32 {
+   
