@@ -41,4 +41,7 @@ impl NodeHeader {
     }
 
     pub fn get_n_descendant(&self) -> i32 {
-   
+        match self {
+            NodeHeader::Angular(h) => h.n_descendants,
+            NodeHeader::Minkowski(h) => h.n_descendants,
+            NodeHeader::Dot(h) =
