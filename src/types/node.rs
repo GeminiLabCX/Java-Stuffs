@@ -50,4 +50,8 @@ impl NodeHeader {
 
     pub fn get_children_id_slice(&self) -> [i32; 2] {
         match self {
-            NodeHeader::Angular(h) =
+            NodeHeader::Angular(h) => h.children,
+            NodeHeader::Minkowski(h) => h.children,
+            NodeHeader::Dot(h) => h.children,
+        }
+    }
