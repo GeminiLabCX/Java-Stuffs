@@ -44,4 +44,10 @@ impl NodeHeader {
         match self {
             NodeHeader::Angular(h) => h.n_descendants,
             NodeHeader::Minkowski(h) => h.n_descendants,
-            NodeHeader::Dot(h) =
+            NodeHeader::Dot(h) => h.n_descendants,
+        }
+    }
+
+    pub fn get_children_id_slice(&self) -> [i32; 2] {
+        match self {
+            NodeHeader::Angular(h) =
