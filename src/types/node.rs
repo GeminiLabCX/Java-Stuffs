@@ -55,3 +55,14 @@ impl NodeHeader {
             NodeHeader::Dot(h) => h.children,
         }
     }
+}
+
+#[repr(C)]
+#[derive(Debug, Clone, Copy)]
+pub struct NodeHeaderAngular {
+    n_descendants: i32,
+    children: [i32; 2],
+}
+
+#[repr(C)]
+#[derive(De
