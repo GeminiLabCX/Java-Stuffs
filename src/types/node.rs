@@ -81,4 +81,10 @@ pub struct NodeHeaderDot {
 }
 
 // #[repr(C)]
-// #[derive(Debu
+// #[derive(Debug, Clone, Copy)]
+// pub struct NodeHeaderHamming {
+//     n_descendants: i32,
+//     children: [i32; 2],
+// }
+
+impl NodeHeaderAngula
