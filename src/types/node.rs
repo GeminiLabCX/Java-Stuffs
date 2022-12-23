@@ -65,4 +65,12 @@ pub struct NodeHeaderAngular {
 }
 
 #[repr(C)]
-#[derive(De
+#[derive(Debug, Clone, Copy)]
+pub struct NodeHeaderMinkowski {
+    n_descendants: i32,
+    bias: f32,
+    children: [i32; 2],
+}
+
+#[repr(C)]
+#[deri
