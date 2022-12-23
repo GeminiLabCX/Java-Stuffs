@@ -73,4 +73,12 @@ pub struct NodeHeaderMinkowski {
 }
 
 #[repr(C)]
-#[deri
+#[derive(Debug, Clone, Copy)]
+pub struct NodeHeaderDot {
+    n_descendants: i32,
+    children: [i32; 2],
+    dot_factor: f32,
+}
+
+// #[repr(C)]
+// #[derive(Debu
