@@ -87,4 +87,6 @@ pub struct NodeHeaderDot {
 //     children: [i32; 2],
 // }
 
-impl NodeHeaderAngula
+impl NodeHeaderAngular {
+    fn read(storage: &Storage, offset: usize) -> *const NodeHeaderAngular {
+        &storage[offset] as *const u8 as *const NodeHeaderAngul
