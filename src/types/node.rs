@@ -89,4 +89,13 @@ pub struct NodeHeaderDot {
 
 impl NodeHeaderAngular {
     fn read(storage: &Storage, offset: usize) -> *const NodeHeaderAngular {
-        &storage[offset] as *const u8 as *const NodeHeaderAngul
+        &storage[offset] as *const u8 as *const NodeHeaderAngular
+    }
+
+    pub const fn header_size() -> usize {
+        mem::size_of::<NodeHeaderAngular>()
+    }
+}
+
+impl NodeHeaderMinkowski {
+    fn read(storage: &Storage, offs
