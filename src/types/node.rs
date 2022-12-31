@@ -98,4 +98,8 @@ impl NodeHeaderAngular {
 }
 
 impl NodeHeaderMinkowski {
-    fn read(storage: &Storage, offs
+    fn read(storage: &Storage, offset: usize) -> *const NodeHeaderMinkowski {
+        &storage[offset] as *const u8 as *const NodeHeaderMinkowski
+    }
+
+    pub const fn header_size() -> usi
