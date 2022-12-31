@@ -102,4 +102,11 @@ impl NodeHeaderMinkowski {
         &storage[offset] as *const u8 as *const NodeHeaderMinkowski
     }
 
-    pub const fn header_size() -> usi
+    pub const fn header_size() -> usize {
+        mem::size_of::<NodeHeaderMinkowski>()
+    }
+}
+
+impl NodeHeaderDot {
+    fn read(storage: &Storage, offset: usize) -> *const NodeHeaderDot {
+        &storag
