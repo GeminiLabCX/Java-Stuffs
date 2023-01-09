@@ -10,4 +10,12 @@ pub struct SearchResultJs {
     pub distance: Option<f32>,
 }
 
-impl Drop for
+impl Drop for SearchResultJs {
+    fn drop(&mut self) {}
+}
+
+#[wasm_bindgen]
+#[derive(Debug)]
+pub struct AnnoyIndexJs {
+    pub dimension: usize,
+    pub size:
