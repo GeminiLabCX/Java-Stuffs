@@ -443,3 +443,63 @@ mod tests {
         use test::Bencher;
 
         #[bench]
+        fn bench_euclidean_distance_no_simd(bencher: &mut Bencher) {
+            let a = &BENCH_ARRAY_1;
+            let b = &BENCH_ARRAY_2;
+            bencher.iter(|| euclidean_distance_no_simd(a, b));
+        }
+
+        #[bench]
+        #[cfg(nightly)]
+        fn bench_euclidean_distance_simd(bencher: &mut Bencher) {
+            let a = &BENCH_ARRAY_1;
+            let b = &BENCH_ARRAY_2;
+            bencher.iter(|| euclidean_distance_simd(a, b));
+        }
+
+        #[bench]
+        fn bench_dot_product_no_simd(bencher: &mut Bencher) {
+            let a = &BENCH_ARRAY_1;
+            let b = &BENCH_ARRAY_2;
+            bencher.iter(|| dot_product_no_simd(a, b));
+        }
+
+        #[bench]
+        #[cfg(nightly)]
+        fn bench_dot_product_simd(bencher: &mut Bencher) {
+            let a = &BENCH_ARRAY_1;
+            let b = &BENCH_ARRAY_2;
+            bencher.iter(|| dot_product_simd(a, b));
+        }
+
+        #[bench]
+        fn bench_cosine_distance_no_simd(bencher: &mut Bencher) {
+            let a = &BENCH_ARRAY_1;
+            let b = &BENCH_ARRAY_2;
+            bencher.iter(|| cosine_distance_no_simd(a, b));
+        }
+
+        #[bench]
+        #[cfg(nightly)]
+        fn bench_cosine_distance_simd(bencher: &mut Bencher) {
+            let a = &BENCH_ARRAY_1;
+            let b = &BENCH_ARRAY_2;
+            bencher.iter(|| cosine_distance_simd(a, b));
+        }
+
+        #[bench]
+        fn bench_manhattan_distance_no_simd(bencher: &mut Bencher) {
+            let a = &BENCH_ARRAY_1;
+            let b = &BENCH_ARRAY_2;
+            bencher.iter(|| manhattan_distance_no_simd(a, b));
+        }
+
+        #[bench]
+        #[cfg(nightly)]
+        fn bench_manhattan_distance_simd(bencher: &mut Bencher) {
+            let a = &BENCH_ARRAY_1;
+            let b = &BENCH_ARRAY_2;
+            bencher.iter(|| manhattan_distance_simd(a, b));
+        }
+    }
+}
