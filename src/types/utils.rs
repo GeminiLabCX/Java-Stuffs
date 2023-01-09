@@ -156,3 +156,134 @@ pub fn manhattan_distance(u: &[f32], v: &[f32]) -> f32 {
             manhattan_distance_simd(u, v)
         } else {
             manhattan_distance_no_simd(u, v)
+        }
+    }
+}
+
+#[cfg(any(test, not(nightly)))]
+pub fn manhattan_distance_no_simd(u: &[f32], v: &[f32]) -> f32 {
+    u.iter().zip(v.iter()).map(|(x, y)| (x - y).abs()).sum()
+}
+
+#[cfg(nightly)]
+pub fn manhattan_distance_simd(u: &[f32], v: &[f32]) -> f32 {
+    let length = u.len();
+    let mut sum = SimdType::default();
+    for i in (0..length).step_by(SIMD_LANES) {
+        let u_chunk = extract_simd_type_from_slice(u, i, length);
+        let v_chunk = extract_simd_type_from_slice(v, i, length);
+        let diff = u_chunk - v_chunk;
+        sum += diff.abs();
+    }
+    sum.reduce_sum()
+}
+
+pub(crate) fn get_nth_descendant_id(
+    storage: &impl StorageExtensions,
+    node_offset: usize,
+    offset_before_children: usize,
+    n: usize,
+) -> usize {
+    let child_offset = node_offset + offset_before_children + n * INT32_SIZE;
+    storage.read_i32(child_offset) as usize
+}
+
+#[cfg(nightly)]
+fn extract_simd_type_from_slice(array: &[f32], start: usize, length: usize) -> SimdType {
+    let end = start + SIMD_LANES;
+    if end > length {
+        let mut simd_array = SimdType::default();
+        // let part = &array[start..length];
+        // for i in 0..part.len() {
+        //     simd_array[i] = part[i];
+        // }
+        for i in start..length {
+            simd_array[i - start] = array[i];
+        }
+        simd_array
+        // SimdType::gather_or_default(&array[start..length], *SIMD_INDICES)
+    } else {
+        let array_fixed =
+            unsafe { *(&array[start..end] as *const [f32] as *const [f32; SIMD_LANES]) };
+        SimdType::from_array(array_fixed)
+    }
+}
+
+#[cfg(nightly)]
+#[inline(always)]
+fn power_simd_type(f: SimdType) -> SimdType {
+    f * f
+}
+
+#[cfg(test)]
+mod tests {
+    #[cfg(nightly)]
+    use crate::tests::*;
+    use crate::types::utils::*;
+
+    #[cfg(nightly)]
+    const SIMD_PARITY_PRECISION: usize = 2;
+
+    #[cfg(nightly)]
+    lazy_static::lazy_static! {
+        static ref BENCH_ARRAY_1: Vec<f32> = gen_range_array(0..255);
+        static ref BENCH_ARRAY_2: Vec<f32> = gen_range_array(0..255);
+    }
+
+    #[cfg(nightly)]
+    fn gen_range_array(range: std::ops::Range<usize>) -> Vec<f32> {
+        use rand::prelude::*;
+
+        let mut v = Vec::with_capacity(range.end - range.start);
+        let mut rng = rand::thread_rng();
+        for _i in range {
+            v.push(rng.gen());
+        }
+        v
+    }
+
+    #[test]
+    fn test_cosine_distance_no_simd() {
+        let r = cosine_distance_no_simd(
+            &[
+                1.068_981,
+                0.563_473_5,
+                0.248_864_4,
+                0.726_652_3,
+                -0.646_281_9,
+            ],
+            &[
+                1.081_076_9,
+                0.274_672_15,
+                0.096_805_33,
+                0.838_130_6,
+                -0.107_109_3,
+            ],
+        );
+        assert_eq!(r.sqrt(), 0.41608825);
+    }
+
+    #[test]
+    #[cfg(nightly)]
+    fn test_cosine_distance_simd() {
+        let r = cosine_distance_simd(
+            &[
+                1.0689810514450073,
+                0.5634735226631165,
+                0.24886439740657806,
+                0.7266523241996765,
+                -0.646281898021698,
+            ],
+            &[
+                1.0810768604278564,
+                0.27467215061187744,
+                0.09680532664060593,
+                0.8381305932998657,
+                -0.10710930079221725,
+            ],
+        );
+        assert_eq!(r.sqrt(), 0.41608825);
+    }
+
+    #[test]
+    fn test_manhattan_distance() {
