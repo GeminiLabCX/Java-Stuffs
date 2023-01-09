@@ -287,3 +287,159 @@ mod tests {
 
     #[test]
     fn test_manhattan_distance() {
+        let r = manhattan_distance(
+            &[
+                0.385_328_35,
+                -0.702_592,
+                -0.363_063_84,
+                0.661_157_8,
+                0.751_742_1,
+            ],
+            &[
+                -0.112_966_87,
+                -1.178_137_7,
+                -0.416_165_53,
+                0.643_773_14,
+                0.112_469_725,
+            ],
+        );
+        assert_eq!(r, 1.683_599_5);
+    }
+
+    #[test]
+    fn test_euclidean_distance_no_simd() {
+        let r = euclidean_distance_no_simd(
+            &[
+                0.171_244_26,
+                -0.205_300_45,
+                -0.053_370_67,
+                0.450_461_36,
+                0.893_327_9,
+            ],
+            &[
+                -0.171_119_3,
+                -0.056_770_597,
+                -0.645_999_2,
+                0.793_953_7,
+                0.378_041_1,
+            ],
+        );
+        assert_eq!(r.sqrt(), 0.934_874_3);
+    }
+
+    #[test]
+    #[cfg(nightly)]
+    fn test_euclidean_distance_simd() {
+        let r = euclidean_distance_simd(
+            &[
+                0.17124426364898682,
+                -0.2053004503250122,
+                -0.05337066948413849,
+                0.45046135783195496,
+                0.8933278918266296,
+            ],
+            &[
+                -0.1711193025112152,
+                -0.05677059665322304,
+                -0.6459991931915283,
+                0.7939537167549133,
+                0.3780410885810852,
+            ],
+        );
+        assert_eq!(r.sqrt(), 0.9348742961883545);
+    }
+
+    #[test]
+    fn test_dot_product_no_simd() {
+        let r = dot_product_no_simd(
+            &[
+                -0.049_540_427,
+                -1.297_113_1,
+                -1.147_180_1,
+                -0.041_628_96,
+                0.385_829_33,
+            ],
+            &[
+                -0.442_285_45,
+                -1.472_465_5,
+                -1.422_374_6,
+                -1.737_046_6,
+                -0.253_102_18,
+            ],
+        );
+        assert_eq!(r, 3.538_242_3);
+    }
+
+    #[test]
+    #[cfg(nightly)]
+    fn test_dot_product_simd() {
+        let r = dot_product_simd(
+            &[
+                -0.04954042658209801,
+                -1.297113060951233,
+                -1.1471800804138184,
+                -0.04162896052002907,
+                0.3858293294906616,
+            ],
+            &[
+                -0.4422854483127594,
+                -1.4724655151367188,
+                -1.4223746061325073,
+                -1.7370465993881226,
+                -0.25310218334198,
+            ],
+        );
+        assert_eq!(r, 3.5382423400878906);
+    }
+
+    #[test]
+    #[cfg(nightly)]
+    fn test_cosine_distance_simd_parity() {
+        let a = &BENCH_ARRAY_1;
+        let b = &BENCH_ARRAY_2;
+        assert_eq!(
+            cosine_distance_no_simd(a, b).round_to(SIMD_PARITY_PRECISION),
+            cosine_distance_simd(a, b).round_to(SIMD_PARITY_PRECISION)
+        );
+    }
+
+    #[test]
+    #[cfg(nightly)]
+    fn test_euclidean_distance_simd_parity() {
+        let a = &BENCH_ARRAY_1;
+        let b = &BENCH_ARRAY_2;
+        assert_eq!(
+            euclidean_distance_no_simd(a, b).round_to(SIMD_PARITY_PRECISION),
+            euclidean_distance_simd(a, b).round_to(SIMD_PARITY_PRECISION)
+        );
+    }
+
+    #[test]
+    #[cfg(nightly)]
+    fn test_dot_product_simd_parity() {
+        let a = &BENCH_ARRAY_1;
+        let b = &BENCH_ARRAY_2;
+        assert_eq!(
+            dot_product_no_simd(a, b).round_to(SIMD_PARITY_PRECISION),
+            dot_product_simd(a, b).round_to(SIMD_PARITY_PRECISION)
+        );
+    }
+
+    #[test]
+    #[cfg(nightly)]
+    fn test_manhattan_distance_simd_parity() {
+        let a = &BENCH_ARRAY_1;
+        let b = &BENCH_ARRAY_2;
+        assert_eq!(
+            manhattan_distance_no_simd(a, b).round_to(SIMD_PARITY_PRECISION),
+            manhattan_distance_simd(a, b).round_to(SIMD_PARITY_PRECISION)
+        );
+    }
+
+    #[cfg(nightly)]
+    mod bench {
+        use super::*;
+        extern crate test;
+        use test::Bencher;
+
+        #[bench]
