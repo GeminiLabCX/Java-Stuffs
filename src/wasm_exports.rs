@@ -18,4 +18,16 @@ impl Drop for SearchResultJs {
 #[derive(Debug)]
 pub struct AnnoyIndexJs {
     pub dimension: usize,
-    pub size:
+    pub size: usize,
+
+    index_ptr: *const AnnoyIndex,
+}
+
+impl Drop for AnnoyIndexJs {
+    fn drop(&mut self) {
+        self.free()
+    }
+}
+
+#[wasm_bindgen]
+impl An
