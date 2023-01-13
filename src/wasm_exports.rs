@@ -50,4 +50,10 @@ impl AnnoyIndexJs {
         Ok(array)
     }
 
-    pub fn get_nea
+    pub fn get_nearest(
+        &self,
+        query_vector: Array,
+        n_results: u32,
+        search_k: i32,
+        should_include_distance: bool,
+    ) -> Result<Array, E
