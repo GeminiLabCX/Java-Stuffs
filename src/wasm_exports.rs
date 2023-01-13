@@ -30,4 +30,11 @@ impl Drop for AnnoyIndexJs {
 }
 
 #[wasm_bindgen]
-impl An
+impl AnnoyIndexJs {
+    pub fn free(&self) {
+        unsafe {
+            drop(Box::from_raw(self.index_ptr as *mut AnnoyIndex));
+        }
+    }
+
+    pub fn get_item_vector
