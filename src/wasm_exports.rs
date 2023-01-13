@@ -37,4 +37,7 @@ impl AnnoyIndexJs {
         }
     }
 
-    pub fn get_item_vector
+    pub fn get_item_vector(&self, item_index: u32) -> Result<Array, Error> {
+        let index = unsafe { &*self.index_ptr };
+        if (item_index as usize) >= index.size {
+  
