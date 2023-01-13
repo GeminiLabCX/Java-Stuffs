@@ -43,4 +43,11 @@ impl AnnoyIndexJs {
             return Err(Error::new("item_index out of range"));
         }
         let item_vec = index.get_item_vector(item_index as u64);
- 
+        let array = Array::new();
+        for v in item_vec {
+            array.push(&JsValue::from_f64(v as f64));
+        }
+        Ok(array)
+    }
+
+    pub fn get_nea
