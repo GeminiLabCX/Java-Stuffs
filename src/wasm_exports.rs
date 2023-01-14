@@ -56,4 +56,7 @@ impl AnnoyIndexJs {
         n_results: u32,
         search_k: i32,
         should_include_distance: bool,
-    ) -> Result<Array, E
+    ) -> Result<Array, Error> {
+        let index = unsafe { &*self.index_ptr };
+        if query_vector.length() as usize != index.dimension {
+            return Err(Error:
