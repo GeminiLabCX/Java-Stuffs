@@ -59,4 +59,8 @@ impl AnnoyIndexJs {
     ) -> Result<Array, Error> {
         let index = unsafe { &*self.index_ptr };
         if query_vector.length() as usize != index.dimension {
-            return Err(Error:
+            return Err(Error::new(&format!(
+                "Wrong input dimension, {} expected, {} provided.",
+                index.dimension,
+                query_vector.length()
+       
