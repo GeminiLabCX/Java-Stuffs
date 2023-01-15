@@ -63,4 +63,8 @@ impl AnnoyIndexJs {
                 "Wrong input dimension, {} expected, {} provided.",
                 index.dimension,
                 query_vector.length()
-       
+            )));
+        }
+        let mut vec = Vec::with_capacity(index.dimension);
+        for i in 0..(index.dimension as i32) {
+            let v = query
