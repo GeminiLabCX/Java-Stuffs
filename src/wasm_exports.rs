@@ -67,4 +67,8 @@ impl AnnoyIndexJs {
         }
         let mut vec = Vec::with_capacity(index.dimension);
         for i in 0..(index.dimension as i32) {
-            let v = query
+            let v = query_vector.at(i);
+            if let Some(v) = v.as_f64() {
+                vec.push(v as f32);
+            } else {
+                return Err(Error::new("Input a
