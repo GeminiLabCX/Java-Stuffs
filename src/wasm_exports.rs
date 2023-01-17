@@ -71,4 +71,9 @@ impl AnnoyIndexJs {
             if let Some(v) = v.as_f64() {
                 vec.push(v as f32);
             } else {
-                return Err(Error::new("Input a
+                return Err(Error::new("Input array should be of number type."));
+            }
+        }
+        let result = index.get_nearest(
+            vec.as_slice(),
+       
