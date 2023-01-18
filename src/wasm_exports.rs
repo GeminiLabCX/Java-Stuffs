@@ -76,4 +76,11 @@ impl AnnoyIndexJs {
         }
         let result = index.get_nearest(
             vec.as_slice(),
-       
+            n_results as usize,
+            search_k,
+            should_include_distance,
+        );
+        convert_result(result)
+    }
+
+    pub fn get_nearest_to_
