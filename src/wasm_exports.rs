@@ -83,4 +83,10 @@ impl AnnoyIndexJs {
         convert_result(result)
     }
 
-    pub fn get_nearest_to_
+    pub fn get_nearest_to_item(
+        &self,
+        item_index: u32,
+        n_results: u32,
+        search_k: i32,
+        should_include_distance: bool,
+    ) -> Result<Array, Erro
