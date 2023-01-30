@@ -89,4 +89,7 @@ impl AnnoyIndexJs {
         n_results: u32,
         search_k: i32,
         should_include_distance: bool,
-    ) -> Result<Array, Erro
+    ) -> Result<Array, Error> {
+        let index = unsafe { &*self.index_ptr };
+        if (item_index as usize) >= index.size {
+            return Err(Error::new("item_index
