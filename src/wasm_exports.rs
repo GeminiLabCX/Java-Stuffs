@@ -92,4 +92,10 @@ impl AnnoyIndexJs {
     ) -> Result<Array, Error> {
         let index = unsafe { &*self.index_ptr };
         if (item_index as usize) >= index.size {
-            return Err(Error::new("item_index
+            return Err(Error::new("item_index out of range"));
+        }
+        let result = index.get_nearest_to_item(
+            item_index as u64,
+            n_results as usize,
+            search_k,
+          
