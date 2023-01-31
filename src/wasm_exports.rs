@@ -111,4 +111,6 @@ pub fn load_index(
     index_type: IndexType,
 ) -> Result<AnnoyIndexJs, Error> {
     let mut buffer = vec![0_u8; u8a.length() as usize];
-    u8
+    u8a.copy_to(&mut buffer);
+    let index = AnnoyIndex::load_from_buffer(buffer, dimension, index_type)
+        .map_err(|err| Error::new(&format!("{err}")
