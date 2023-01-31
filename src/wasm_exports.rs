@@ -98,4 +98,13 @@ impl AnnoyIndexJs {
             item_index as u64,
             n_results as usize,
             search_k,
-          
+            should_include_distance,
+        );
+        convert_result(result)
+    }
+}
+
+#[wasm_bindgen]
+pub fn load_index(
+    u8a: &Uint8Array,
+    dimensio
