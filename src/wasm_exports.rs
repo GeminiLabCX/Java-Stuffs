@@ -107,4 +107,8 @@ impl AnnoyIndexJs {
 #[wasm_bindgen]
 pub fn load_index(
     u8a: &Uint8Array,
-    dimensio
+    dimension: usize,
+    index_type: IndexType,
+) -> Result<AnnoyIndexJs, Error> {
+    let mut buffer = vec![0_u8; u8a.length() as usize];
+    u8
