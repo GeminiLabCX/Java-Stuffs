@@ -113,4 +113,13 @@ pub fn load_index(
     let mut buffer = vec![0_u8; u8a.length() as usize];
     u8a.copy_to(&mut buffer);
     let index = AnnoyIndex::load_from_buffer(buffer, dimension, index_type)
-        .map_err(|err| Error::new(&format!("{err}")
+        .map_err(|err| Error::new(&format!("{err}")))?;
+    Ok(AnnoyIndexJs {
+        dimension: index.dimension,
+        size: index.size,
+
+        index_ptr: Box::into_raw(Box::new(index)),
+    })
+}
+
+fn convert_r
