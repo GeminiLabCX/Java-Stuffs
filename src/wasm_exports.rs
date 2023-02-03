@@ -122,4 +122,7 @@ pub fn load_index(
     })
 }
 
-fn convert_r
+fn convert_result(result: AnnoyIndexSearchResult) -> Result<Array, Error> {
+    let array = Array::new();
+    for i in 0..result.count {
+     
