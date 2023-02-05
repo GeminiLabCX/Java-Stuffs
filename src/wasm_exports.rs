@@ -125,4 +125,9 @@ pub fn load_index(
 fn convert_result(result: AnnoyIndexSearchResult) -> Result<Array, Error> {
     let array = Array::new();
     for i in 0..result.count {
-     
+        let id = result.id_list[i];
+        let distance = if result.is_distance_included {
+            Some(result.distance_list[i])
+        } else {
+            None
+   
