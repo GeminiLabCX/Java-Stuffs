@@ -133,4 +133,8 @@ fn convert_result(result: AnnoyIndexSearchResult) -> Result<Array, Error> {
         };
         array.push(
             &serde_wasm_bindgen::to_value(&SearchResultJs { id, distance })
-                .map_err(|err| Error::new(&format!("{err}"))
+                .map_err(|err| Error::new(&format!("{err}")))?,
+        );
+    }
+    Ok(array)
+}
