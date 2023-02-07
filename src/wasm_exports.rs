@@ -130,4 +130,7 @@ fn convert_result(result: AnnoyIndexSearchResult) -> Result<Array, Error> {
             Some(result.distance_list[i])
         } else {
             None
-   
+        };
+        array.push(
+            &serde_wasm_bindgen::to_value(&SearchResultJs { id, distance })
+                .map_err(|err| Error::new(&format!("{err}"))
