@@ -20,4 +20,8 @@ for metric in metrics:
 
     u = AnnoyIndex(dim, metric)
     u.verbose(True)
-    u.load('./../tests/'+fname)  # supe
+    u.load('./../tests/'+fname)  # super fast, will just mmap the file
+    print(u.get_item_vector(3))
+    v0 = u.get_item_vector(0)
+    print(v0)
+    nearests = u.get_nns_by_vector(v0, 5, include_distances=Tr
