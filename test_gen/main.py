@@ -13,4 +13,11 @@ for metric in metrics:
     #     v = [random.gauss(0, 1) for z in range(dim)]
     #     t.add_item(i, v)
 
-    
+    # t.build(10)  # 10 trees
+    # t.save(fname)
+
+    # ...
+
+    u = AnnoyIndex(dim, metric)
+    u.verbose(True)
+    u.load('./../tests/'+fname)  # supe
