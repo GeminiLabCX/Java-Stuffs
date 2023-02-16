@@ -29,4 +29,5 @@ for metric in metrics:
     print(u.get_item_vector(id_1))
     print(u.get_distance(0, id_1))
     # print(u.get_distance(0, 16))
-    
+    print(nearests[0])  # will find the 1000 nearest neighbors
+    print(nearests[1])
