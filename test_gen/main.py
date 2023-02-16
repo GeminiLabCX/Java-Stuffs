@@ -24,4 +24,9 @@ for metric in metrics:
     print(u.get_item_vector(3))
     v0 = u.get_item_vector(0)
     print(v0)
-    nearests = u.get_nns_by_vector(v0, 5, include_distances=Tr
+    nearests = u.get_nns_by_vector(v0, 5, include_distances=True)
+    id_1 = nearests[0][1]    
+    print(u.get_item_vector(id_1))
+    print(u.get_distance(0, id_1))
+    # print(u.get_distance(0, 16))
+    
