@@ -7,4 +7,10 @@ mod tests {
     };
     use js_sys::{Array, Uint8Array};
     use wasm_bindgen::prelude::*;
-    
+    use wasm_bindgen_test::*;
+
+    static HOLE_INDEX_BYTES: &[u8] = include_bytes!("hole.10d.ann");
+
+    #[wasm_bindgen_test]
+    fn hole_tests() {
+  
