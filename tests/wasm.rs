@@ -13,4 +13,6 @@ mod tests {
 
     #[wasm_bindgen_test]
     fn hole_tests() {
-  
+        let u8a = Uint8Array::new_with_length(HOLE_INDEX_BYTES.len() as u32);
+        u8a.copy_from(HOLE_INDEX_BYTES);
+        let index = loa
