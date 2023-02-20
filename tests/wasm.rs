@@ -15,4 +15,6 @@ mod tests {
     fn hole_tests() {
         let u8a = Uint8Array::new_with_length(HOLE_INDEX_BYTES.len() as u32);
         u8a.copy_from(HOLE_INDEX_BYTES);
-        let index = loa
+        let index = load_index(&u8a, 10, IndexType::Angular).unwrap();
+        assert_eq!(index.dimension, 10, "Wrong dimension {}", index.dimension);
+        assert_eq!(index.size, 1001, "Wr
