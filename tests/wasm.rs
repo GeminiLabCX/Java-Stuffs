@@ -17,4 +17,10 @@ mod tests {
         u8a.copy_from(HOLE_INDEX_BYTES);
         let index = load_index(&u8a, 10, IndexType::Angular).unwrap();
         assert_eq!(index.dimension, 10, "Wrong dimension {}", index.dimension);
-        assert_eq!(index.size, 1001, "Wr
+        assert_eq!(index.size, 1001, "Wrong size {}", index.size);
+        let v1 = vec![
+            0.10471842,
+            0.55223828,
+            0.44094049,
+            0.98384884,
+     
