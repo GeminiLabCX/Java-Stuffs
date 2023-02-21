@@ -30,4 +30,8 @@ mod tests {
             0.05733591,
             1.35356555,
         ];
-        let v1_
+        let v1_array = Array::new();
+        for v in v1 {
+            v1_array.push(&JsValue::from_f64(v as f64));
+        }
+        let nearest = index.get_nearest(v
