@@ -36,4 +36,8 @@ mod tests {
         }
         let nearest = index.get_nearest(v1_array, 100, -1, true).unwrap();
         assert_eq!(nearest.length(), 1);
-        let r0: SearchResultJs = serde_wasm_bindgen::from_value(n
+        let r0: SearchResultJs = serde_wasm_bindgen::from_value(nearest.at(0)).unwrap();
+        assert_eq!(r0.id, 1000);
+        assert_eq!(r0.distance.unwrap_or_default(), 1.212572);
+    }
+}
