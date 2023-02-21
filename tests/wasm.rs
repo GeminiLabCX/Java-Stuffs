@@ -34,4 +34,6 @@ mod tests {
         for v in v1 {
             v1_array.push(&JsValue::from_f64(v as f64));
         }
-        let nearest = index.get_nearest(v
+        let nearest = index.get_nearest(v1_array, 100, -1, true).unwrap();
+        assert_eq!(nearest.length(), 1);
+        let r0: SearchResultJs = serde_wasm_bindgen::from_value(n
